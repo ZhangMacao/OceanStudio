@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/oceanstudio-icon.png" width="96" height="96" alt="OceanStudio logo">
+  <img src="assets/oceanstudio-logo.png" width="420" alt="OceanStudio logo">
 </p>
 
 # OceanStudio: An Extensible Platform for AI Agent-Driven Experimentation in Underwater Robotics
