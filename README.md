@@ -8,9 +8,11 @@
   <strong>English</strong> | <a href="README.zh-CN.md">简体中文</a>
 </p>
 
+[Project page](https://zhangmacao.github.io/OceanStudio/) · [Watch the demo](https://zhangmacao.github.io/OceanStudio/#demo)
+
 OceanStudio brings robot configuration, underwater environments, control experiments, and evaluation into a browser-based workspace. Researchers and external AI agents use the same platform to configure simulations, inspect results, and iterate on algorithms.
 
-> **Project preview.** This repository currently contains the project introduction and branding. Source code and installation packages have not been released. Watch this repository for release updates.
+> **Project preview.** This repository hosts the project website, demonstration film, and introduction. Platform source code and installation packages have not been released. Watch this repository for release updates.
 
 ## From experiment design to evaluated results
 

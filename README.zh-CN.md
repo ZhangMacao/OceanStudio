@@ -8,11 +8,13 @@
   <a href="README.md">English</a> | <strong>简体中文</strong>
 </p>
 
+[项目主页](https://zhangmacao.github.io/OceanStudio/?lang=zh) · [观看演示](https://zhangmacao.github.io/OceanStudio/?lang=zh#demo)
+
 **面向水下机器人、支持 AI Agent 驱动实验的可扩展平台。**
 
 OceanStudio 将机器人配置、水下环境、控制实验和结果评估组织在同一个浏览器工作台中。研究者与外部 AI Agent 可以通过统一的平台配置仿真、读取结果，并迭代算法。
 
-> **项目预览阶段。** 本仓库目前仅包含项目介绍与品牌素材，尚未发布平台源码和安装包。欢迎关注仓库，获取后续发布动态。
+> **项目预览阶段。** 本仓库提供项目主页、演示成片与介绍，尚未发布平台源码和安装包。欢迎关注仓库，获取后续发布动态。
 
 ## 从实验设计到结果评估
 

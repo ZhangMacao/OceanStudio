@@ -1,0 +1,10 @@
+# Local editable film packages are never part of the public repository.
+OceanStudio_*/
+*.zip
+*.7z
+*.rar
+node_modules/
+.analysis/
+__pycache__/
+.DS_Store
+Thumbs.db
