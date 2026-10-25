@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5faff">
+  <title>OceanStudio: An Extensible Platform for AI Agent-Driven Experimentation in Underwater Robotics</title>
+  <meta name="description" content="Compose underwater experiments, work visually or through AI agents, and close the loop on algorithm research with OceanStudio.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OceanStudio: Agent-driven experimentation in underwater robotics">
+  <meta property="og:description" content="Composable experiments. A shared workspace for humans and agents. Closed-loop underwater autoresearch.">
+  <meta property="og:image" content="https://zhangmacao.github.io/OceanStudio/assets/images/poster.jpg">
+  <meta property="og:url" content="https://zhangmacao.github.io/OceanStudio/">
+  <link rel="canonical" href="https://zhangmacao.github.io/OceanStudio/">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#main" aria-label="OceanStudio home"><img src="assets/oceanstudio-logo.png" width="2048" height="719" alt="OceanStudio"></a>
+      <nav aria-label="Main navigation" data-i18n-aria="navigation">
+        <a href="#platform" data-i18n="navPlatform">Platform</a>
+        <a href="#workspace" data-i18n="navWorkspace">Human + agent</a>
+        <a href="#autoresearch" data-i18n="navResearch">Autoresearch</a>
+      </nav>
+      <div class="header-actions">
+        <a class="github-link" href="https://github.com/ZhangMacao/OceanStudio" aria-label="OceanStudio on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+        <div class="language-control" role="group" aria-label="Page language" data-i18n-aria="languageLabel">
+          <button type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <h1 id="hero-title" data-i18n="title">An Extensible Platform for AI Agent-Driven Experimentation in Underwater Robotics</h1>
+      <p class="hero-description" data-i18n="intro">A shared workspace where researchers and AI agents compose underwater experiments, evaluate algorithms, and turn each run into the next iteration.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#demo" id="watch-demo"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6Z"/></svg><span data-i18n="watch">Watch the demo</span></a>
+        <a class="button secondary" href="https://github.com/ZhangMacao/OceanStudio" data-i18n="explore">Explore the project</a>
+      </div>
+      <p class="release-status" data-i18n="releaseShort">Project preview · Platform source release planned</p>
+    </section>
+
+    <section id="demo" class="demo wrap" aria-labelledby="demo-heading">
+      <h2 id="demo-heading" class="sr-only" data-i18n="filmTitle">OceanStudio in action</h2>
+      <div class="film-shell">
+        <video id="demo-video" controls playsinline preload="metadata" poster="assets/images/poster.jpg" aria-label="OceanStudio English demonstration film" data-i18n-aria="videoLabel">
+          <source src="assets/media/oceanstudio-promo-en.mp4" type="video/mp4">
+          <p><a href="assets/media/oceanstudio-promo-en.mp4" data-i18n="videoFallback">Open the English demonstration video</a></p>
+        </video>
+      </div>
+      <div class="film-caption"><span data-i18n="filmCaption">English demonstration film</span><span>1:54 <span aria-hidden="true">/</span> 1080p</span></div>
+      <div class="chapters" role="group" aria-label="Jump to a film chapter" data-i18n-aria="chaptersLabel">
+        <button type="button" data-time="0"><span>00:00</span><span data-i18n="chapterOverview">Overview</span></button>
+        <button type="button" data-time="30.1"><span>00:30</span><span data-i18n="chapterSetup">Configuration</span></button>
+        <button type="button" data-time="56.3"><span>00:56</span><span data-i18n="chapterCapabilities">Experiments</span></button>
+        <button type="button" data-time="93.5"><span>01:33</span><span data-i18n="chapterResearch">Research loop</span></button>
+        <button type="button" data-time="103.1"><span>01:43</span><span data-i18n="chapterOutro">OceanStudio</span></button>
+      </div>
+      <p class="video-message" id="video-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="platform" class="platform section wrap" aria-labelledby="platform-heading">
+      <div class="section-intro">
+        <h2 id="platform-heading" data-i18n="platformTitle">Composable underwater experiments</h2>
+        <p data-i18n="platformIntro">Build the experiment around the research question. Configure the vehicle, its sensing and dynamics, the water around it, and the task it needs to complete.</p>
+      </div>
+      <div class="configuration-tabs" role="tablist" aria-label="Explore experiment configuration" data-i18n-aria="configurationLabel">
+        <button type="button" role="tab" id="tab-robots" aria-controls="configuration-panel" aria-selected="true" data-feature="robots" data-i18n="tabRobots">Robots & fleets</button>
+        <button type="button" role="tab" id="tab-sensors" aria-controls="configuration-panel" aria-selected="false" tabindex="-1" data-feature="sensors" data-i18n="tabSensors">Sensor layouts</button>
+        <button type="button" role="tab" id="tab-dynamics" aria-controls="configuration-panel" aria-selected="false" tabindex="-1" data-feature="dynamics" data-i18n="tabDynamics">Dynamics & control</button>
+        <button type="button" role="tab" id="tab-worlds" aria-controls="configuration-panel" aria-selected="false" tabindex="-1" data-feature="worlds" data-i18n="tabWorlds">Worlds & water</button>
+        <button type="button" role="tab" id="tab-missions" aria-controls="configuration-panel" aria-selected="false" tabindex="-1" data-feature="missions" data-i18n="tabMissions">Missions & evaluation</button>
+      </div>
+      <div id="configuration-panel" class="configuration-panel" role="tabpanel" aria-labelledby="tab-robots" tabindex="0">
+        <figure class="configuration-image"><img id="feature-image" src="assets/images/robots.jpg" width="1280" height="720" loading="lazy" alt="Vehicle configuration shown in the English OceanStudio film"><figcaption data-i18n="frameCaption">Selected frames from the English demonstration</figcaption></figure>
+        <div class="configuration-copy" aria-live="polite"><h3 id="feature-title">A vehicle, or a fleet.</h3><p id="feature-description">Configure AUV and ROV experiments with independent initial states, sensors, physical parameters, and controllers for each robot.</p><ul id="feature-details"><li>Torpedo and hovering vehicles</li><li>Up to four robots in a shared world</li><li>Custom AUV design-package import</li></ul></div>
+      </div>
+    </section>
+
+    <section id="workspace" class="workspace-section section" aria-labelledby="workspace-heading">
+      <div class="wrap">
+        <div class="section-intro"><h2 id="workspace-heading" data-i18n="workspaceTitle">A shared workspace for humans and agents</h2><p data-i18n="workspaceIntro">Design experiments visually or operate the same platform through LLM agents. Both paths use shared experiment configurations and validation.</p></div>
+        <div class="two-paths">
+          <article class="visual-path"><div class="path-heading"><h3 data-i18n="visualTitle">Work visually</h3><span data-i18n="visualLabel">Browser workspace</span></div><img src="assets/images/visual.jpg" width="1280" height="720" loading="lazy" alt="OceanStudio sensor assembly and vehicle configuration" data-i18n-alt="visualAlt"><p data-i18n="visualCopy">Select a vehicle, attach sensors, inspect the scene, and refine the experiment in context.</p></article>
+          <article class="agent-path"><div class="path-heading"><h3 data-i18n="agentTitle">Work through an agent</h3><span>CLI + Skills <span aria-hidden="true">/</span> MCP</span></div><blockquote data-i18n="examplePrompt">Configure an AUV with depth and sonar sensing. Compare candidate controllers on an S-shaped path under the same current and evaluation criteria.</blockquote><div class="agent-names" aria-label="Example external agents"><span>Codex</span><span>Claude Code</span><span>OpenCode</span><span>DeepSeek Harness</span></div><p data-i18n="agentCopy">Extend scenes, sensor models, and control algorithms through explicit interfaces. Namespaced plugins let new implementations coexist with existing ones.</p></article>
+        </div>
+        <div class="shared-pipeline" aria-label="Shared experiment pipeline" data-i18n-aria="pipelineLabel"><span data-i18n="sharedConfiguration">Shared configuration</span><span aria-hidden="true">→</span><span data-i18n="validation">Validation</span><span aria-hidden="true">→</span><span data-i18n="simulation">Simulation</span><span aria-hidden="true">→</span><span data-i18n="evaluation">Evaluation</span></div>
+        <p class="scope-note" data-i18n="extensionScope">Native axis-controller plugins can enter supported native tasks after review and explicit activation. Reference sensors, kinematics, and hydrodynamic plugins retain their own runtime requirements.</p>
+      </div>
+    </section>
+
+    <section id="autoresearch" class="research-section section" aria-labelledby="research-heading">
+      <div class="wrap research-layout">
+        <div class="research-copy"><h2 id="research-heading" data-i18n="researchTitle">Closed-loop underwater autoresearch</h2><p data-i18n="researchIntro">Turn a research objective into an experiment loop. An agent proposes algorithms and parameters, tests candidates in simulation, evaluates the evidence, and revises the next iteration.</p><p class="research-principle" data-i18n="researchPrinciple">Keep the task fixed. Make each revision explicit. Learn from the recorded result.</p><a class="text-link" href="#demo" id="watch-loop" data-i18n="watchLoop">See the loop in the film</a></div>
+        <div class="research-loop"><ol><li><span class="step-number">1</span><h3 data-i18n="propose">Propose</h3><p data-i18n="proposeCopy">A candidate algorithm and experiment configuration</p></li><li><span class="step-number">2</span><h3 data-i18n="test">Test</h3><p data-i18n="testCopy">Simulation under controlled task and environment conditions</p></li><li><span class="step-number">3</span><h3 data-i18n="measure">Evaluate</h3><p data-i18n="measureCopy">Recorded trajectories, errors, and independent task metrics</p></li><li><span class="step-number">4</span><h3 data-i18n="revise">Revise</h3><p data-i18n="reviseCopy">A new algorithm or parameter proposal for the next trial</p></li></ol><div class="loop-return"><span aria-hidden="true">↶</span><span data-i18n="loopReturn">Evidence informs the next candidate</span></div></div>
+        <p class="research-scope" data-i18n="researchScope">Current development scope includes bounded controller studies and reviewed plugin extensions. The film illustrates the iteration workflow; it does not establish a new optimization result.</p>
+      </div>
+    </section>
+
+    <section class="release-section wrap" aria-labelledby="release-heading"><div><h2 id="release-heading" data-i18n="releaseTitle">Follow the next experiment.</h2><p data-i18n="releaseCopy">This is the public project preview. Platform source code and installation packages have not been released. Release updates will be announced on GitHub.</p></div><a class="button primary" href="https://github.com/ZhangMacao/OceanStudio" data-i18n="follow">Follow OceanStudio on GitHub</a></section>
+  </main>
+  <footer class="site-footer wrap"><span>OceanStudio</span><p data-i18n="footer">AI agent-driven experimentation in underwater robotics.</p><a href="https://github.com/ZhangMacao/OceanStudio/issues" data-i18n="contact">Discuss a research use case</a></footer>
+</body>
+</html>
