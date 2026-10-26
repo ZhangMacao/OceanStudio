@@ -1,0 +1,654 @@
+{
+  "schema": "oceanstudio-public-clips/v1",
+  "items": [
+    {
+      "id": "vehicles",
+      "group": "configure",
+      "title": {
+        "en": "Vehicle selection",
+        "zh": "机器人选择"
+      },
+      "description": {
+        "en": "Switch between torpedo and hovering vehicles with their own assembly profiles.",
+        "zh": "切换鱼雷型与悬停型载体，使用各自的装配档案。"
+      },
+      "scope": {
+        "en": "ROVs use the hovering vehicle; tether dynamics are not modeled.",
+        "zh": "ROV 使用悬停型载体，当前不包含缆绳动力学。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/vehicles.mp4",
+      "poster": "assets/images/capabilities/vehicles.jpg",
+      "preview_video": "assets/media/capabilities/vehicles.webm",
+      "preview_sha256": "b4b92884bc25fbe3b389dfec78152ebc121ef3f6a35fd8c92a71592176ed3e2f",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "3aae842a90b09c218f59460d3c84d3530df9cb4591cc476754b1cc299569c81b",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "fleet",
+      "group": "configure",
+      "title": {
+        "en": "Multi-robot configurations",
+        "zh": "多机器人配置"
+      },
+      "description": {
+        "en": "Give each AUV and ROV its own ID, sensors, physical parameters and control settings.",
+        "zh": "为每台 AUV、ROV 独立配置 ID、传感器、物理参数与控制方案。"
+      },
+      "scope": {
+        "en": "Up to four robots share one world, clock and current field.",
+        "zh": "同一世界最多四台机器人，共享仿真时钟与水流。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/fleet.mp4",
+      "poster": "assets/images/capabilities/fleet.jpg",
+      "preview_video": "assets/media/capabilities/fleet.webm",
+      "preview_sha256": "3c36413ebd640823192a36ea9e04f1b7f66b82544557184fa5cd66584cac3bec",
+      "duration": 6.0,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "1d8d8837c12eca2019369d08b152ccc39c52fc10893f46328ab8c8f322de3846",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "sensors",
+      "group": "configure",
+      "title": {
+        "en": "Sensor layouts & sampling",
+        "zh": "传感器装配与采样"
+      },
+      "description": {
+        "en": "Set mounting sockets, camera resolution, field of view and recording frequency.",
+        "zh": "设置安装挂点、相机分辨率、视场与记录频率。"
+      },
+      "scope": {
+        "en": "Native RGB, imaging sonar, pose, depth, IMU and DVL depend on vehicle support.",
+        "zh": "原生 RGB、成像声呐、位姿、深度、IMU、DVL 需匹配载体。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/sensors.mp4",
+      "poster": "assets/images/capabilities/sensors.jpg",
+      "preview_video": "assets/media/capabilities/sensors.webm",
+      "preview_sha256": "01afadff74dfc3a83741c8952c73c9f3f83ededdcae5b8022793b62cb3844488",
+      "duration": 6.08,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "195be8eff134015b24669ff23dbdba65008aeaa37eb86232e4b3b722898cb557",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "actuators",
+      "group": "configure",
+      "title": {
+        "en": "Actuator parameters",
+        "zh": "执行器参数"
+      },
+      "description": {
+        "en": "Tune the supported thruster limits and response lag for each vehicle.",
+        "zh": "逐机器人调整受支持的推进器限幅与响应滞后。"
+      },
+      "scope": {
+        "en": "Existing propellers, fins and eight-thruster layouts; no arbitrary allocator editor.",
+        "zh": "使用现有螺旋桨、舵面与八推进器布局，尚无任意分配矩阵编辑器。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/actuators.mp4",
+      "poster": "assets/images/capabilities/actuators.jpg",
+      "preview_video": "assets/media/capabilities/actuators.webm",
+      "preview_sha256": "7901033e121c9e7a0e8adaef346e7df28328382fdb7c8619816874141b92c093",
+      "duration": 6.04,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "45b4a57afc4e68a91c00f5d3e430d877d5835ea3e2b197db370e37fbd859d152",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "hydrodynamics",
+      "group": "configure",
+      "title": {
+        "en": "Hydrodynamics & body models",
+        "zh": "水动力与刚体模型"
+      },
+      "description": {
+        "en": "Edit density, displacement and body parameters; choose supported Fossen or ideal physics.",
+        "zh": "调整密度、排水体积与刚体参数，选择受支持的 Fossen 或理想物理模型。"
+      },
+      "scope": {
+        "en": "Model parameters are simulation estimates, not calibrated vehicle measurements.",
+        "zh": "模型参数属于仿真估算，不代表实艇标定结果。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/hydrodynamics.mp4",
+      "poster": "assets/images/capabilities/hydrodynamics.jpg",
+      "preview_video": "assets/media/capabilities/hydrodynamics.webm",
+      "preview_sha256": "a40f4a594fc5387603992ee3d9f1acb8b718396a7dba17c390c6069d283f3cd6",
+      "duration": 6.17,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "ffc720f09fb5bbf372b8128acd13a580b3ada25ddfe9bdfb5324b948abda4a2f",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "worlds",
+      "group": "configure",
+      "title": {
+        "en": "Worlds & spawn selection",
+        "zh": "世界与出生点选择"
+      },
+      "description": {
+        "en": "Choose an installed world and set the experiment starting pose.",
+        "zh": "选择已安装世界，设置实验的起始位姿。"
+      },
+      "scope": {
+        "en": "Native worlds and static browser geometry are verified separately; water and post-processing differ.",
+        "zh": "分别核对原生世界与浏览器静态几何；水面和后处理效果有所不同。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/worlds.mp4",
+      "poster": "assets/images/capabilities/worlds.jpg",
+      "preview_video": "assets/media/capabilities/worlds.webm",
+      "preview_sha256": "f8f39e30e3cfc727d37597d581ba940e6f552d73a97c465c16f3f312115a654a",
+      "duration": 6.75,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "b93d64f537eddde86a89118a0cd7662ac13d0608078802487192d1178d1109aa",
+      "source_commit": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+      "source_commits": [
+        "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+      ],
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film"
+    },
+    {
+      "id": "water",
+      "group": "configure",
+      "title": {
+        "en": "Water appearance & currents",
+        "zh": "水环境与扰动"
+      },
+      "description": {
+        "en": "Adjust visibility, then compare no current, fixed-direction, sine and multi-sine inputs.",
+        "zh": "调整能见度，并选择无流、固定方向、正弦或多正弦水流。"
+      },
+      "scope": {
+        "en": "Appearance and force disturbances are separate; currents are horizontal and uniform.",
+        "zh": "视觉效果与受力扰动分别配置；当前水流为水平、空间均匀。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/water.mp4",
+      "poster": "assets/images/capabilities/water.jpg",
+      "preview_video": "assets/media/capabilities/water.webm",
+      "preview_sha256": "eedce31fede4661fcb9b2758c29eb16b724fff4b14c32acd183ee334b45868b1",
+      "duration": 7.54,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "b6fdfb2c1d22d39bd85d32f7a3c6e132d31cac756252be282af1d40f164da258",
+      "source_commit": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+      "source_commits": [
+        "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+        "b9786ddfd1a124ffa974d172b0d47f0d8df369b6"
+      ],
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film"
+    },
+    {
+      "id": "initial-state",
+      "group": "configure",
+      "title": {
+        "en": "Independent initial states",
+        "zh": "独立初始状态"
+      },
+      "description": {
+        "en": "Set position, heading and velocity independently for each member of a fleet.",
+        "zh": "为编队中每台机器人分别设置位置、航向与初速度。"
+      },
+      "scope": {
+        "en": "NED world coordinates and FRD body coordinates remain explicit.",
+        "zh": "保持明确的 NED 世界系与 FRD 机体系约定。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/initial-state.mp4",
+      "poster": "assets/images/capabilities/initial-state.jpg",
+      "preview_video": "assets/media/capabilities/initial-state.webm",
+      "preview_sha256": "95f774158cc29112d3a74b0cda6a2ffbe0007e06334bf4755cd897b59afc0f47",
+      "duration": 5.96,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "b76b47b586c30f675ff0a332d6499d712acb80a9f7d255505653c730b92a7475",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "controllers",
+      "group": "configure",
+      "title": {
+        "en": "PID, sliding mode & MPC",
+        "zh": "PID、滑模与 MPC"
+      },
+      "description": {
+        "en": "Select a controller and physics model without replacing other robots’ settings.",
+        "zh": "独立选择控制算法与物理模型，不覆盖其他机器人的配置。"
+      },
+      "scope": {
+        "en": "These native algorithms serve supported cruise / S-curve tasks at 50 Hz, up to 60 s.",
+        "zh": "这些原生算法用于受支持的定速／S 型任务，50 Hz、最长 60 秒。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/controllers.mp4",
+      "poster": "assets/images/capabilities/controllers.jpg",
+      "preview_video": "assets/media/capabilities/controllers.webm",
+      "preview_sha256": "7935a59182be92c3fb868d9567eb898e7adca8884ab1cbb6c7349be87706b9eb",
+      "duration": 6.58,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "31c3c83296bf5ab6991c041f7e553deda0fbeb18d8cc00d5948e7db601c91a00",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "missions",
+      "group": "configure",
+      "title": {
+        "en": "Mission targets & paths",
+        "zh": "实验任务与路径"
+      },
+      "description": {
+        "en": "Switch a cruise mission to an S-shaped route and refine speed, depth and heading.",
+        "zh": "将定速巡航切换为 S 型路径，调整速度、深度与航向目标。"
+      },
+      "scope": {
+        "en": "Figure-eight, approach and hold tasks use their corresponding control pipelines.",
+        "zh": "八字、进近与悬停任务使用各自对应的控制链。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/missions.mp4",
+      "poster": "assets/images/capabilities/missions.jpg",
+      "preview_video": "assets/media/capabilities/missions.webm",
+      "preview_sha256": "d77b5e83f89cbedbb9b0f72c9ca82bf62c00a27cff6cbc6f8f2721cbefa5c2d7",
+      "duration": 7.04,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "01c5f771c69107f40d921c26c3bb85b20e59e6e9c5c8cfc740c1cd41158703b7",
+      "source_commit": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+      "source_commits": [
+        "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+      ],
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film"
+    },
+    {
+      "id": "evaluation",
+      "group": "configure",
+      "title": {
+        "en": "Evaluation & replay",
+        "zh": "实验评估与回放"
+      },
+      "description": {
+        "en": "Define acceptance criteria, then inspect recorded RGB, sonar, trajectories and actuators.",
+        "zh": "配置验收条件，再检查 RGB、声呐、轨迹和执行器的真实记录。"
+      },
+      "scope": {
+        "en": "Replay is a new 20-second Fossen cruise in TrenchReef; saved runs retain their own criteria.",
+        "zh": "回放来自本次新运行的 TrenchReef 20 秒 Fossen 巡航；每条记录保留各自验收条件。"
+      },
+      "kind": "replay",
+      "video": "assets/media/capabilities/evaluation.mp4",
+      "poster": "assets/images/capabilities/evaluation.jpg",
+      "preview_video": "assets/media/capabilities/evaluation.webm",
+      "preview_sha256": "8aef2a6a362d27681f2c2d947a17728931fa7d3c6da43b531c05fa3b5c326d27",
+      "duration": 7.67,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "fc989a66eb40d1342bed6b59e46293f7ab0ee8f1231560ad5b569d9ff3c2bb02",
+      "source_commit": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+      "source_commits": [
+        "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+      ],
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film"
+    },
+    {
+      "id": "projects",
+      "group": "configure",
+      "title": {
+        "en": "Projects & configuration files",
+        "zh": "项目与配置文件"
+      },
+      "description": {
+        "en": "Save a design, reopen it from recent projects, and reuse experiment configurations.",
+        "zh": "保存设计，从最近项目重开，并复用实验配置。"
+      },
+      "scope": {
+        "en": "Project documents, experiment configurations and run records stay separate.",
+        "zh": "项目文档、实验配置与运行记录分别管理。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/projects.mp4",
+      "poster": "assets/images/capabilities/projects.jpg",
+      "preview_video": "assets/media/capabilities/projects.webm",
+      "preview_sha256": "f44aa51c049727e22d95d3496b3107cfa8e9d0a3d8709f38098636e76ff4f8ef",
+      "duration": 6.58,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "5d4499186de3c85cefd3ad858e3f6db5292ba165ed063fb6963ac67a06ffed3d",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "presets",
+      "group": "extend",
+      "title": {
+        "en": "New experiment presets",
+        "zh": "新增实验配置预设"
+      },
+      "description": {
+        "en": "Import a new JSON component, inspect the proposed changes, and apply it to a design.",
+        "zh": "导入新的 JSON 组件，预检并核对变更后应用到设计。"
+      },
+      "scope": {
+        "en": "Combine registered vehicle, sensor, environment and task types.",
+        "zh": "组合已注册的载体、传感器、环境与任务类型。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/presets.mp4",
+      "poster": "assets/images/capabilities/presets.jpg",
+      "preview_video": "assets/media/capabilities/presets.webm",
+      "preview_sha256": "6f9abbfe6f1f24b106498106354b2f73f4abdb7b0a585645738a0139f45c3d66",
+      "duration": 7.54,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "fdc0d92d8a80eda00e5bffc667dba5e25aefc849e7cf76624d5f5228cb8961c2",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "robot-import",
+      "group": "extend",
+      "title": {
+        "en": "New robot design packages",
+        "zh": "新增机器人设计包"
+      },
+      "description": {
+        "en": "Import a ZIP containing a model, mounting sockets and physical design parameters.",
+        "zh": "导入包含模型、传感器挂点与物理设计参数的 ZIP。"
+      },
+      "scope": {
+        "en": "The recorded import adds a design / reference vehicle; native UE requires an adapter.",
+        "zh": "实录新增设计／参考载体；成为原生 UE 机器人仍需适配。"
+      },
+      "kind": "ui",
+      "video": "assets/media/capabilities/robot-import.mp4",
+      "poster": "assets/images/capabilities/robot-import.jpg",
+      "preview_video": "assets/media/capabilities/robot-import.webm",
+      "preview_sha256": "b34173d08a24db3daccf285304e6c8e4a85a675c18c0c593eac47864aab66ac1",
+      "duration": 7.88,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "1b5877834c01206ee851c0b3924e54142e9edfd7d9f1322fb851232f392b2246",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 3.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "world-import",
+      "group": "extend",
+      "title": {
+        "en": "World-package import",
+        "zh": "新增兼容世界包"
+      },
+      "description": {
+        "en": "Inspect a prebuilt environment package and add its maps to the scene library.",
+        "zh": "检查预构建环境包，让其中的地图进入场景库。"
+      },
+      "scope": {
+        "en": "Verified package migration is shown. Source-project conversion requires a Linux UE 5.3.2 editor.",
+        "zh": "展示已校验世界包的迁移结果；源工程转换仍需要 Linux UE 5.3.2 编辑器。"
+      },
+      "kind": "inspection",
+      "video": "assets/media/capabilities/world-import.mp4",
+      "poster": "assets/images/capabilities/world-import.jpg",
+      "preview_video": "assets/media/capabilities/world-import.webm",
+      "preview_sha256": "e90968a6d9db1a74f25e672db1c1ae3fb02528cb79a4aedbda7d54d8ed00c9e4",
+      "duration": 7.33,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "3f0964a773956428d8ff3bf14861f897a53a31feb7c80acd887bded63134f670",
+      "source_commit": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+      "source_commits": [
+        "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+      ],
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film"
+    },
+    {
+      "id": "sensor-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New sensor models",
+        "zh": "新增传感器模型"
+      },
+      "description": {
+        "en": "Create a namespaced sensor plugin and validate its registration through the CLI.",
+        "zh": "通过 CLI 新建带命名空间的传感器插件并验证注册。"
+      },
+      "scope": {
+        "en": "Reference sensor interface; a new UE sensor needs host-side support.",
+        "zh": "参考传感器接口；新的 UE 传感器需要宿主支持。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/sensor-plugin.mp4",
+      "poster": "assets/images/capabilities/sensor-plugin.jpg",
+      "preview_video": "assets/media/capabilities/sensor-plugin.webm",
+      "preview_sha256": "fb271bd0cd6e3d83352d5b22cb4db029f44916d24cf429198ab82a72f4fffb23",
+      "duration": 8.08,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "bf851759fda6a5ef0b4e6d0f8ff7b7da3e4ca359e76de127a84b34515bdde0ae",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "kinematics-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New motion trajectories",
+        "zh": "新增运动学轨迹"
+      },
+      "description": {
+        "en": "Add a prescribed-motion implementation in its own Python file.",
+        "zh": "在独立 Python 文件中新增规定运动实现。"
+      },
+      "scope": {
+        "en": "Reference / offline motion; not a native closed-loop controller.",
+        "zh": "用于参考／离线规定运动，不等同于原生闭环控制。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/kinematics-plugin.mp4",
+      "poster": "assets/images/capabilities/kinematics-plugin.jpg",
+      "preview_video": "assets/media/capabilities/kinematics-plugin.webm",
+      "preview_sha256": "92342d5e75903b4ceb19a47eade5de3fa31b5e1cc6aa2d3c068388cefafe469e",
+      "duration": 8.0,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "edd2ae444d407b5c54c72caf62c611e9f422dcf808861bea315f59a03b3ee5d5",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "controller-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New reference controllers",
+        "zh": "新增参考控制器"
+      },
+      "description": {
+        "en": "Scaffold a controller, check the additive changes, and register a unique algorithm ID.",
+        "zh": "生成控制器脚手架，检查只新增变更，注册独立算法 ID。"
+      },
+      "scope": {
+        "en": "Reference force-output interface; existing default algorithms stay intact.",
+        "zh": "参考力输出接口；保留已有默认算法。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/controller-plugin.mp4",
+      "poster": "assets/images/capabilities/controller-plugin.jpg",
+      "preview_video": "assets/media/capabilities/controller-plugin.webm",
+      "preview_sha256": "90ee70c22c4c0df3307b6c58f88e4a766dc96c6dd17f016329fb6e2fbb8092ed",
+      "duration": 8.17,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "bb022226113e8a436b1d6cebf9cc94537c4fc6fc20db2f5552289c5f6e03b867",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "native-controller-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New native axis controllers",
+        "zh": "新增原生分轴控制器"
+      },
+      "description": {
+        "en": "Create and validate an axis-controller plugin for the supported native control interface.",
+        "zh": "为受支持的原生控制接口创建并校验分轴控制插件。"
+      },
+      "scope": {
+        "en": "Registration is shown; reviewed activation, deployment and runtime validation follow separately.",
+        "zh": "短片展示注册；审阅启用、部署与运行验证需另行完成。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/native-controller-plugin.mp4",
+      "poster": "assets/images/capabilities/native-controller-plugin.jpg",
+      "preview_video": "assets/media/capabilities/native-controller-plugin.webm",
+      "preview_sha256": "708bbaf5ae4cee84235e2e863c330622a9cd0667eab591dd96426a9d0ae1acba",
+      "duration": 8.12,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "634b0dad6f781ed9b8c4e5a7d6a3bdf0645df14e615b3f299a9a549cf08a5b45",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "hydrodynamics-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New hydrodynamic loads",
+        "zh": "新增水动力算法"
+      },
+      "description": {
+        "en": "Register a new water-load model in its own namespace without editing Fossen.",
+        "zh": "以独立命名空间注册新的水载荷模型，不修改 Fossen。"
+      },
+      "scope": {
+        "en": "Reference rigid-body interface; arbitrary native Fossen replacement is not exposed.",
+        "zh": "参考刚体接口；尚未开放任意模型替换原生 Fossen。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/hydrodynamics-plugin.mp4",
+      "poster": "assets/images/capabilities/hydrodynamics-plugin.jpg",
+      "preview_video": "assets/media/capabilities/hydrodynamics-plugin.webm",
+      "preview_sha256": "b317aeb9e276d0a86de96338d2009fa44f0e4822ae6b491b2a3df60bc2f99e48",
+      "duration": 8.17,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "c1c5444807802dfcb648156102613b71403724173ac0ff530c743ad0debc7475",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "actuator-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New actuator models",
+        "zh": "新增执行器模型"
+      },
+      "description": {
+        "en": "Add and register a separate actuator-response implementation.",
+        "zh": "独立新增并注册执行器响应模型。"
+      },
+      "scope": {
+        "en": "Reference actuator contract; native allocation changes need a host interface.",
+        "zh": "参考执行器契约；原生分配变化需要宿主接口。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/actuator-plugin.mp4",
+      "poster": "assets/images/capabilities/actuator-plugin.jpg",
+      "preview_video": "assets/media/capabilities/actuator-plugin.webm",
+      "preview_sha256": "d6c15f660ed520c22197215135a8b3624481e2bfd805db4d5e68e9ba386aaf3c",
+      "duration": 8.12,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "580b60efa09fcb2938aade955de03d4c2d3a98025436f51377369a03f67a34eb",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "task-plugin",
+      "group": "extend",
+      "title": {
+        "en": "New reference tasks",
+        "zh": "新增参考实验任务"
+      },
+      "description": {
+        "en": "Scaffold a task plugin and validate its type and parameter contract.",
+        "zh": "生成任务插件并校验其类型与参数契约。"
+      },
+      "scope": {
+        "en": "Reference task extension; arbitrary native mission orchestration is not yet general.",
+        "zh": "参考任务扩展；任意原生任务编排尚未统一。"
+      },
+      "kind": "cli",
+      "video": "assets/media/capabilities/task-plugin.mp4",
+      "poster": "assets/images/capabilities/task-plugin.jpg",
+      "preview_video": "assets/media/capabilities/task-plugin.webm",
+      "preview_sha256": "2b0c349e23a3e75e95906159f35341387bcab19286da7fb19cc6d21b589d652a",
+      "duration": 8.0,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "4416b08e53213e5d85c96f527f23981b2d88151236086e2720a5ca26d0a01c5f",
+      "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
+      "playback_rate": 1.0,
+      "capture": "new Playwright browser interaction recording; no footage from the overview film",
+      "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    }
+  ]
+}
