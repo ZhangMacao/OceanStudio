@@ -242,12 +242,12 @@
       "id": "controllers",
       "group": "configure",
       "title": {
-        "en": "PID, sliding mode & MPC",
-        "zh": "PID、滑模与 MPC"
+        "en": "Controllers & tuning",
+        "zh": "多种控制器与调参"
       },
       "description": {
-        "en": "Select a controller and physics model without replacing other robots’ settings.",
-        "zh": "独立选择控制算法与物理模型，不覆盖其他机器人的配置。"
+        "en": "Choose a controller and tune its parameters independently for each robot.",
+        "zh": "为每台机器人独立选择控制器并调整参数。"
       },
       "scope": {
         "en": "These native algorithms serve supported cruise / S-curve tasks at 50 Hz, up to 60 s.",

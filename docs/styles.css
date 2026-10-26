@@ -28,7 +28,7 @@
 .clip-play svg{width:20px;height:20px;fill:currentColor}
 .clip-open:hover .clip-play{background:var(--blue)}
 .capability-copy{padding:20px}
-.capability-copy h4{font-size:clamp(22px,1.5vw,26px);line-height:1.35;letter-spacing:-.025em;font-weight:750;margin:0;min-height:2.7em;text-wrap:balance}
+.capability-copy h4{font-family:"Manrope","Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;font-size:18px;line-height:1.4;letter-spacing:-.02em;font-weight:650;margin:0;white-space:nowrap;text-wrap:nowrap}
 .gallery-status:empty{display:none}.gallery-status{margin-top:20px;font-size:16px;color:var(--muted)}
 .clip-error{position:absolute;inset:auto 0 0;background:#102b3b;color:white;font-size:15px;padding:12px;z-index:2}
 .clip-dialog{width:min(1320px,calc(100% - 48px));max-height:calc(100dvh - 48px);overflow:auto;padding:22px;border:1px solid var(--line);border-radius:12px;color:var(--ink);background:white;box-shadow:0 25px 100px #00152455}
@@ -43,6 +43,8 @@
 .clip-dialog>.clip-dialog-scope{color:var(--muted);margin-top:8px}
 .clip-dialog>a{display:inline-block;font-size:16px;color:var(--blue);margin-top:14px}
 body:has(.clip-dialog[open]){overflow:hidden}
-@media(max-width:1100px){.capability-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.capability-copy h4{font-size:22px}}
+@media(max-width:1359px){.capability-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}}
+@media(max-width:1023px){.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.platform.wrap{width:calc(100% - 36px)}.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.capability-lanes{gap:54px}.capability-copy{padding:18px}.lane-heading{padding:21px 0 24px}.clip-dialog{padding:15px;width:calc(100% - 24px);max-height:calc(100dvh - 24px)}.clip-dialog-heading{align-items:flex-start;gap:12px}.clip-dialog-heading h3{font-size:22px}.clip-dialog-heading button{padding:9px 12px}}
-@media(max-width:480px){.capability-grid{grid-template-columns:1fr;gap:22px}.capability-copy h4{min-height:0;font-size:24px}.gallery-tools{margin-bottom:24px}.clip-dialog-heading h3{font-size:21px}.clip-dialog-actions{gap:8px}}
+@media(max-width:639px){.capability-grid{grid-template-columns:1fr;gap:22px}.gallery-tools{margin-bottom:24px}.clip-dialog-heading h3{font-size:21px}.clip-dialog-actions{gap:8px}}
+@media(max-width:480px){.platform.wrap{width:calc(100% - 24px)}.capability-copy{padding:16px}}
