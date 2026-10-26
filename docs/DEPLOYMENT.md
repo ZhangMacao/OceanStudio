@@ -10,7 +10,9 @@ The MP4 is the accepted English final film, not the editable video project. Scre
 
 ## Capability gallery
 
-The **Configure / Extend** lanes replace the former configuration tabs. Their 22 short clips are independent recordings of the development platform, not excerpts from the overview film. Twelve cards cover configuration, and ten cover resource or algorithm extensions. The initial recordings use `b9786ddf`; after updating the isolated server to `5a3e1fb1`, five cards were refreshed for the new terrain assets. The other seventeen MP4s and WebMs retain their original bytes. The manifest at `assets/media/capabilities/manifest.json` records descriptions, scope, duration, resolution, source revisions and SHA-256 for each published video.
+The **Highly configurable / Highly extensible** sections replace the former configuration tabs. Their 22 short clips are independent recordings of the development platform, not excerpts from the overview film. Twelve cards cover configuration, and ten cover resource or algorithm extensions. The initial recordings use `b9786ddf`; after updating the isolated server to `5a3e1fb1`, five cards were refreshed for the new terrain assets. The other seventeen MP4s and WebMs retain their original bytes. The manifest at `assets/media/capabilities/manifest.json` records descriptions, scope, duration, resolution, source revisions and SHA-256 for each published video.
+
+The sections are stacked, configuration first and extension second. Desktop uses four cards per row, tablet three, and narrow layouts two or one. Each card shows only the video and a large feature title; descriptions, runtime scope, capture type, duration and acceleration details are available in the enlarged player. Existing videos and posters are unchanged by this layout revision.
 
 UI clips show real Playwright browser interactions. CLI clips show actual scaffold creation, the append-only change gate and pinned registration validation in an isolated plugin workspace. Registration checks do not establish algorithm behavior or native UE compatibility. The robot import shows a design/reference package.
 

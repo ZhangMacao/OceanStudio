@@ -3,26 +3,18 @@
   'use strict';
   const labels = {
     en: {
-      hint: 'Explore the settings, then see how the platform grows. Select any clip for a larger view.',
-      configure: 'Configure', configureIntro: 'Shape the robot, environment and experiment around your question.',
-      extend: 'Extend', extendIntro: 'Add resources and independent implementations through supported interfaces.',
-      scopeTitle: 'Extensions coexist with the defaults.',
-      scopeCopy: 'New algorithms use their own files and type IDs. Reference plugins and native plugins have different runtime contracts. General evaluation-metric and frontend-panel plugins are not yet available.',
+      configure: 'Highly configurable', extend: 'Highly extensible',
       pause: 'Pause previews', play: 'Play previews', close: 'Close video', download: 'Download clip',
       open: 'View video: ', unavailable: 'Preview unavailable. Select the clip to open the video.',
       loadError: 'Clip descriptions could not be loaded. The English previews remain available.',
-      ui: 'UI capture', cli: 'CLI capture', replay: 'UI + new run replay', setup: 'Import setup', inspection: 'Package checks + UI', seconds: 's'
+      ui: 'UI capture', cli: 'CLI capture', replay: 'UI + new run replay', setup: 'Import setup', inspection: 'Package checks + UI', seconds: 's', speed: 'speed'
     },
     zh: {
-      hint: '先看如何配置，再看如何扩展。点击任意短片可放大观看。',
-      configure: '可配置', configureIntro: '围绕研究问题，调整机器人、环境与实验条件。',
-      extend: '可新增', extendIntro: '通过已支持的接口，增加资源与独立算法实现。',
-      scopeTitle: '新实现与默认算法共存。',
-      scopeCopy: '新增算法使用独立文件和类型 ID。参考插件与原生插件有各自的运行契约。通用评估指标和前端面板插件尚未开放。',
+      configure: '高度可配置', extend: '高度可扩展',
       pause: '暂停预览', play: '播放预览', close: '关闭视频', download: '下载短片',
       open: '观看短片：', unavailable: '预览暂不可用，可点击直接打开视频。',
       loadError: '短片说明加载失败，仍可查看英文卡片和视频。',
-      ui: '界面实录', cli: 'CLI 实录', replay: '界面与新实验回放', setup: '导入入口', inspection: '包检查与界面', seconds: '秒'
+      ui: '界面实录', cli: 'CLI 实录', replay: '界面与新实验回放', setup: '导入入口', inspection: '包检查与界面', seconds: '秒', speed: '倍速'
     }
   };
   let language = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
@@ -49,10 +41,6 @@
       const data = items.get(card.dataset.capability);
       if (!data) return;
       card.querySelector('h4').textContent = data.title[language];
-      card.querySelector('.capability-description').textContent = data.description[language];
-      card.querySelector('.capability-scope').textContent = data.scope[language];
-      card.querySelector('.clip-kind').textContent = text[data.kind] + (data.playback_rate > 1 ? ` · ${data.playback_rate}×` : '');
-      card.querySelector('.clip-duration').textContent = `${Math.round(data.duration)}${text.seconds}`;
       card.querySelector('.clip-open').setAttribute('aria-label', text.open + data.title[language]);
       card.querySelector('video').setAttribute('aria-label', data.title[language]);
       const error = card.querySelector('.clip-error');
@@ -62,7 +50,10 @@
   }
 
   function translateDialog() {
+    const text = labels[language];
     document.getElementById('clip-dialog-title').textContent = opened.title[language];
+    document.getElementById('clip-dialog-meta').textContent = `${text[opened.kind]} · ${Math.round(opened.duration)}${text.seconds}` +
+      (opened.playback_rate > 1 ? ` · ${opened.playback_rate}× ${text.speed}` : '');
     document.getElementById('clip-dialog-description').textContent = opened.description[language];
     document.getElementById('clip-dialog-scope').textContent = opened.scope[language];
     dialogVideo.setAttribute('aria-label', opened.title[language]);

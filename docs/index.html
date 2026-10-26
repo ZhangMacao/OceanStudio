@@ -14,9 +14,9 @@
   <link rel="canonical" href="https://zhangmacao.github.io/OceanStudio/">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261026-gallery">
-  <script src="app.js?v=20261026-gallery" defer></script>
-  <script src="gallery.js?v=20261026-gallery" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261026-gallery-simple">
+  <script src="app.js?v=20261026-gallery-simple" defer></script>
+  <script src="gallery.js?v=20261026-gallery-simple" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -73,204 +73,182 @@
         <h2 id="platform-heading" data-i18n="platformTitle">Composable underwater experiments</h2>
         <p data-i18n="platformIntro">Build the experiment around the research question. Configure the vehicle, its sensing and dynamics, the water around it, and the task it needs to complete.</p>
       </div>
-      <div class="gallery-tools"><p data-gallery-copy="hint">Explore the settings, then see how the platform grows. Select any clip for a larger view.</p><button id="preview-toggle" type="button" aria-pressed="true" disabled>Pause previews</button></div>
+      <div class="gallery-tools"><button id="preview-toggle" type="button" aria-pressed="true" disabled>Pause previews</button></div>
       <div class="capability-lanes">
         <section class="capability-lane configure-lane" aria-labelledby="configure-heading">
-          <header class="lane-heading"><h3 id="configure-heading" data-gallery-copy="configure">Configure</h3><p data-gallery-copy="configureIntro">Shape the robot, environment and experiment around your question.</p></header>
+          <header class="lane-heading"><h3 id="configure-heading" data-gallery-copy="configure">Highly configurable</h3></header>
           <div id="configure-cards" class="capability-grid">
 <!-- configure-cards -->
           <article class="capability-card" data-capability="vehicles">
             <a class="clip-open" href="assets/media/capabilities/vehicles.mp4" data-clip="vehicles" aria-label="View video: Vehicle selection">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/vehicles.jpg" aria-label="Vehicle selection"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">6s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Vehicle selection</h4><p class="capability-description">Switch between torpedo and hovering vehicles with their own assembly profiles.</p><p class="capability-scope">ROVs use the hovering vehicle; tether dynamics are not modeled.</p></div>
+            <div class="capability-copy"><h4>Vehicle selection</h4></div>
           </article>
           <article class="capability-card" data-capability="fleet">
             <a class="clip-open" href="assets/media/capabilities/fleet.mp4" data-clip="fleet" aria-label="View video: Multi-robot configurations">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/fleet.jpg" aria-label="Multi-robot configurations"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">6s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Multi-robot configurations</h4><p class="capability-description">Give each AUV and ROV its own ID, sensors, physical parameters and control settings.</p><p class="capability-scope">Up to four robots share one world, clock and current field.</p></div>
+            <div class="capability-copy"><h4>Multi-robot configurations</h4></div>
           </article>
           <article class="capability-card" data-capability="sensors">
             <a class="clip-open" href="assets/media/capabilities/sensors.mp4" data-clip="sensors" aria-label="View video: Sensor layouts &amp; sampling">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/sensors.jpg" aria-label="Sensor layouts &amp; sampling"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">6s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Sensor layouts &amp; sampling</h4><p class="capability-description">Set mounting sockets, camera resolution, field of view and recording frequency.</p><p class="capability-scope">Native RGB, imaging sonar, pose, depth, IMU and DVL depend on vehicle support.</p></div>
+            <div class="capability-copy"><h4>Sensor layouts &amp; sampling</h4></div>
           </article>
           <article class="capability-card" data-capability="actuators">
             <a class="clip-open" href="assets/media/capabilities/actuators.mp4" data-clip="actuators" aria-label="View video: Actuator parameters">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/actuators.jpg" aria-label="Actuator parameters"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">6s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Actuator parameters</h4><p class="capability-description">Tune the supported thruster limits and response lag for each vehicle.</p><p class="capability-scope">Existing propellers, fins and eight-thruster layouts; no arbitrary allocator editor.</p></div>
+            <div class="capability-copy"><h4>Actuator parameters</h4></div>
           </article>
           <article class="capability-card" data-capability="hydrodynamics">
             <a class="clip-open" href="assets/media/capabilities/hydrodynamics.mp4" data-clip="hydrodynamics" aria-label="View video: Hydrodynamics &amp; body models">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/hydrodynamics.jpg" aria-label="Hydrodynamics &amp; body models"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">6s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Hydrodynamics &amp; body models</h4><p class="capability-description">Edit density, displacement and body parameters; choose supported Fossen or ideal physics.</p><p class="capability-scope">Model parameters are simulation estimates, not calibrated vehicle measurements.</p></div>
+            <div class="capability-copy"><h4>Hydrodynamics &amp; body models</h4></div>
           </article>
           <article class="capability-card" data-capability="worlds">
             <a class="clip-open" href="assets/media/capabilities/worlds.mp4" data-clip="worlds" aria-label="View video: Worlds &amp; spawn selection">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/worlds.jpg" aria-label="Worlds &amp; spawn selection"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">7s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Worlds &amp; spawn selection</h4><p class="capability-description">Choose an installed world and set the experiment starting pose.</p><p class="capability-scope">Native worlds and static browser geometry are verified separately; water and post-processing differ.</p></div>
+            <div class="capability-copy"><h4>Worlds &amp; spawn selection</h4></div>
           </article>
           <article class="capability-card" data-capability="water">
             <a class="clip-open" href="assets/media/capabilities/water.mp4" data-clip="water" aria-label="View video: Water appearance &amp; currents">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/water.jpg" aria-label="Water appearance &amp; currents"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Water appearance &amp; currents</h4><p class="capability-description">Adjust visibility, then compare no current, fixed-direction, sine and multi-sine inputs.</p><p class="capability-scope">Appearance and force disturbances are separate; currents are horizontal and uniform.</p></div>
+            <div class="capability-copy"><h4>Water appearance &amp; currents</h4></div>
           </article>
           <article class="capability-card" data-capability="initial-state">
             <a class="clip-open" href="assets/media/capabilities/initial-state.mp4" data-clip="initial-state" aria-label="View video: Independent initial states">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/initial-state.jpg" aria-label="Independent initial states"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">6s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Independent initial states</h4><p class="capability-description">Set position, heading and velocity independently for each member of a fleet.</p><p class="capability-scope">NED world coordinates and FRD body coordinates remain explicit.</p></div>
+            <div class="capability-copy"><h4>Independent initial states</h4></div>
           </article>
           <article class="capability-card" data-capability="controllers">
             <a class="clip-open" href="assets/media/capabilities/controllers.mp4" data-clip="controllers" aria-label="View video: PID, sliding mode &amp; MPC">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/controllers.jpg" aria-label="PID, sliding mode &amp; MPC"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">7s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>PID, sliding mode &amp; MPC</h4><p class="capability-description">Select a controller and physics model without replacing other robots’ settings.</p><p class="capability-scope">These native algorithms serve supported cruise / S-curve tasks at 50 Hz, up to 60 s.</p></div>
+            <div class="capability-copy"><h4>PID, sliding mode &amp; MPC</h4></div>
           </article>
           <article class="capability-card" data-capability="missions">
             <a class="clip-open" href="assets/media/capabilities/missions.mp4" data-clip="missions" aria-label="View video: Mission targets &amp; paths">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/missions.jpg" aria-label="Mission targets &amp; paths"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">7s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Mission targets &amp; paths</h4><p class="capability-description">Switch a cruise mission to an S-shaped route and refine speed, depth and heading.</p><p class="capability-scope">Figure-eight, approach and hold tasks use their corresponding control pipelines.</p></div>
+            <div class="capability-copy"><h4>Mission targets &amp; paths</h4></div>
           </article>
           <article class="capability-card" data-capability="evaluation">
             <a class="clip-open" href="assets/media/capabilities/evaluation.mp4" data-clip="evaluation" aria-label="View video: Evaluation &amp; replay">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/evaluation.jpg" aria-label="Evaluation &amp; replay"></video>
-              <span class="clip-kind">UI + new run replay</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Evaluation &amp; replay</h4><p class="capability-description">Define acceptance criteria, then inspect recorded RGB, sonar, trajectories and actuators.</p><p class="capability-scope">Replay is a new 20-second Fossen cruise in TrenchReef; saved runs retain their own criteria.</p></div>
+            <div class="capability-copy"><h4>Evaluation &amp; replay</h4></div>
           </article>
           <article class="capability-card" data-capability="projects">
             <a class="clip-open" href="assets/media/capabilities/projects.mp4" data-clip="projects" aria-label="View video: Projects &amp; configuration files">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/projects.jpg" aria-label="Projects &amp; configuration files"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">7s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>Projects &amp; configuration files</h4><p class="capability-description">Save a design, reopen it from recent projects, and reuse experiment configurations.</p><p class="capability-scope">Project documents, experiment configurations and run records stay separate.</p></div>
+            <div class="capability-copy"><h4>Projects &amp; configuration files</h4></div>
           </article>
 <!-- /configure-cards -->
           </div>
         </section>
         <section class="capability-lane extend-lane" aria-labelledby="extend-heading">
-          <header class="lane-heading"><h3 id="extend-heading" data-gallery-copy="extend">Extend</h3><p data-gallery-copy="extendIntro">Add resources and independent implementations through supported interfaces.</p></header>
+          <header class="lane-heading"><h3 id="extend-heading" data-gallery-copy="extend">Highly extensible</h3></header>
           <div id="extend-cards" class="capability-grid">
 <!-- extend-cards -->
           <article class="capability-card" data-capability="presets">
             <a class="clip-open" href="assets/media/capabilities/presets.mp4" data-clip="presets" aria-label="View video: New experiment presets">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/presets.jpg" aria-label="New experiment presets"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New experiment presets</h4><p class="capability-description">Import a new JSON component, inspect the proposed changes, and apply it to a design.</p><p class="capability-scope">Combine registered vehicle, sensor, environment and task types.</p></div>
+            <div class="capability-copy"><h4>New experiment presets</h4></div>
           </article>
           <article class="capability-card" data-capability="robot-import">
             <a class="clip-open" href="assets/media/capabilities/robot-import.mp4" data-clip="robot-import" aria-label="View video: New robot design packages">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/robot-import.jpg" aria-label="New robot design packages"></video>
-              <span class="clip-kind">UI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New robot design packages</h4><p class="capability-description">Import a ZIP containing a model, mounting sockets and physical design parameters.</p><p class="capability-scope">The recorded import adds a design / reference vehicle; native UE requires an adapter.</p></div>
+            <div class="capability-copy"><h4>New robot design packages</h4></div>
           </article>
           <article class="capability-card" data-capability="world-import">
             <a class="clip-open" href="assets/media/capabilities/world-import.mp4" data-clip="world-import" aria-label="View video: World-package import">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/world-import.jpg" aria-label="World-package import"></video>
-              <span class="clip-kind">Package checks + UI</span><span class="clip-duration">7s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>World-package import</h4><p class="capability-description">Inspect a prebuilt environment package and add its maps to the scene library.</p><p class="capability-scope">Verified package migration is shown. Source-project conversion requires a Linux UE 5.3.2 editor.</p></div>
+            <div class="capability-copy"><h4>World-package import</h4></div>
           </article>
           <article class="capability-card" data-capability="sensor-plugin">
             <a class="clip-open" href="assets/media/capabilities/sensor-plugin.mp4" data-clip="sensor-plugin" aria-label="View video: New sensor models">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/sensor-plugin.jpg" aria-label="New sensor models"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New sensor models</h4><p class="capability-description">Create a namespaced sensor plugin and validate its registration through the CLI.</p><p class="capability-scope">Reference sensor interface; a new UE sensor needs host-side support.</p></div>
+            <div class="capability-copy"><h4>New sensor models</h4></div>
           </article>
           <article class="capability-card" data-capability="kinematics-plugin">
             <a class="clip-open" href="assets/media/capabilities/kinematics-plugin.mp4" data-clip="kinematics-plugin" aria-label="View video: New motion trajectories">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/kinematics-plugin.jpg" aria-label="New motion trajectories"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New motion trajectories</h4><p class="capability-description">Add a prescribed-motion implementation in its own Python file.</p><p class="capability-scope">Reference / offline motion; not a native closed-loop controller.</p></div>
+            <div class="capability-copy"><h4>New motion trajectories</h4></div>
           </article>
           <article class="capability-card" data-capability="controller-plugin">
             <a class="clip-open" href="assets/media/capabilities/controller-plugin.mp4" data-clip="controller-plugin" aria-label="View video: New reference controllers">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/controller-plugin.jpg" aria-label="New reference controllers"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New reference controllers</h4><p class="capability-description">Scaffold a controller, check the additive changes, and register a unique algorithm ID.</p><p class="capability-scope">Reference force-output interface; existing default algorithms stay intact.</p></div>
+            <div class="capability-copy"><h4>New reference controllers</h4></div>
           </article>
           <article class="capability-card" data-capability="native-controller-plugin">
             <a class="clip-open" href="assets/media/capabilities/native-controller-plugin.mp4" data-clip="native-controller-plugin" aria-label="View video: New native axis controllers">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/native-controller-plugin.jpg" aria-label="New native axis controllers"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New native axis controllers</h4><p class="capability-description">Create and validate an axis-controller plugin for the supported native control interface.</p><p class="capability-scope">Registration is shown; reviewed activation, deployment and runtime validation follow separately.</p></div>
+            <div class="capability-copy"><h4>New native axis controllers</h4></div>
           </article>
           <article class="capability-card" data-capability="hydrodynamics-plugin">
             <a class="clip-open" href="assets/media/capabilities/hydrodynamics-plugin.mp4" data-clip="hydrodynamics-plugin" aria-label="View video: New hydrodynamic loads">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/hydrodynamics-plugin.jpg" aria-label="New hydrodynamic loads"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New hydrodynamic loads</h4><p class="capability-description">Register a new water-load model in its own namespace without editing Fossen.</p><p class="capability-scope">Reference rigid-body interface; arbitrary native Fossen replacement is not exposed.</p></div>
+            <div class="capability-copy"><h4>New hydrodynamic loads</h4></div>
           </article>
           <article class="capability-card" data-capability="actuator-plugin">
             <a class="clip-open" href="assets/media/capabilities/actuator-plugin.mp4" data-clip="actuator-plugin" aria-label="View video: New actuator models">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/actuator-plugin.jpg" aria-label="New actuator models"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New actuator models</h4><p class="capability-description">Add and register a separate actuator-response implementation.</p><p class="capability-scope">Reference actuator contract; native allocation changes need a host interface.</p></div>
+            <div class="capability-copy"><h4>New actuator models</h4></div>
           </article>
           <article class="capability-card" data-capability="task-plugin">
             <a class="clip-open" href="assets/media/capabilities/task-plugin.mp4" data-clip="task-plugin" aria-label="View video: New reference tasks">
               <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/capabilities/task-plugin.jpg" aria-label="New reference tasks"></video>
-              <span class="clip-kind">CLI capture</span><span class="clip-duration">8s</span>
               <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
             </a>
-            <div class="capability-copy"><h4>New reference tasks</h4><p class="capability-description">Scaffold a task plugin and validate its type and parameter contract.</p><p class="capability-scope">Reference task extension; arbitrary native mission orchestration is not yet general.</p></div>
+            <div class="capability-copy"><h4>New reference tasks</h4></div>
           </article>
 <!-- /extend-cards -->
           </div>
-          <aside class="extension-boundary"><h4 data-gallery-copy="scopeTitle">Extensions coexist with the defaults.</h4><p data-gallery-copy="scopeCopy">New algorithms use their own files and type IDs. Reference plugins and native plugins have different runtime contracts. General evaluation-metric and frontend-panel plugins are not yet available.</p></aside>
         </section>
       </div>
       <p id="gallery-status" class="gallery-status" role="status"></p>
-      <dialog id="clip-dialog" class="clip-dialog" aria-labelledby="clip-dialog-title" aria-describedby="clip-dialog-description clip-dialog-scope">
+      <dialog id="clip-dialog" class="clip-dialog" aria-labelledby="clip-dialog-title" aria-describedby="clip-dialog-meta clip-dialog-description clip-dialog-scope">
         <div class="clip-dialog-heading"><h3 id="clip-dialog-title"></h3><div class="clip-dialog-actions"><div class="language-control" role="group" aria-label="Page language" data-i18n-aria="languageLabel"><button type="button" data-language="en" lang="en" aria-pressed="true">EN</button><button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button></div><button id="clip-close" type="button" data-gallery-copy="close">Close video</button></div></div>
         <video id="clip-dialog-video" controls playsinline preload="none"></video>
+        <p id="clip-dialog-meta" class="clip-dialog-meta"></p>
         <p id="clip-dialog-description"></p><p id="clip-dialog-scope" class="clip-dialog-scope"></p>
         <a id="clip-download" download data-gallery-copy="download">Download clip</a>
       </dialog>
