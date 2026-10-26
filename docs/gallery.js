@@ -29,6 +29,28 @@
   try { if (!motion.matches) autoPlay = localStorage.getItem('oceanstudio-preview-motion') !== 'paused'; } catch {}
   let items = new Map(), opened = null, origin = null;
   const visible = new Map();
+  let titleFrame = 0;
+
+  function fitCardTitles() {
+    if (titleFrame) return;
+    titleFrame = requestAnimationFrame(() => {
+      titleFrame = 0;
+      cards.forEach(card => {
+        const title = card.querySelector('h4');
+        title.style.fontSize = '22px';
+        if (title.scrollWidth > title.clientWidth) {
+          const size = Math.max(18, Math.floor(22 * (title.clientWidth - 2) / title.scrollWidth * 10) / 10);
+          title.style.fontSize = `${size}px`;
+        }
+      });
+    });
+  }
+
+  if ('ResizeObserver' in window) {
+    const titleResize = new ResizeObserver(fitCardTitles);
+    document.querySelectorAll('.capability-grid').forEach(grid => titleResize.observe(grid));
+  } else window.addEventListener('resize', fitCardTitles);
+  document.fonts?.ready.then(fitCardTitles);
 
   function translate() {
     const text = labels[language];
@@ -46,6 +68,7 @@
       const error = card.querySelector('.clip-error');
       if (error) error.textContent = text.unavailable;
     });
+    fitCardTitles();
     if (opened) translateDialog();
   }
 
@@ -151,7 +174,7 @@
   });
 
   translate();
-  fetch('assets/media/capabilities/manifest.json').then(response => {
+  fetch('assets/media/capabilities/manifest.json?v=20261026-controller-titles').then(response => {
     if (!response.ok) throw Error('manifest unavailable');
     return response.json();
   }).then(manifest => {
