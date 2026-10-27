@@ -56,11 +56,13 @@ has an optical beacon. The station is cooked with UE 5.3.2 into an isolated Linu
 package. Existing terrain is streamed without modifying its package or the
 formal service. Station, initial state, Fossen model, fixed current, clock,
 duration and acceptance conditions stay fixed across the published variants.
-The three stages deliberately contrast backward drift under fixed low thrust,
+The three stages contrast a forward approach with uncompensated lateral drift,
 an imprecise approach with heading/speed feedback, and successful terminal LOS
-control. Their measured final errors are 49.35785, 2.77960 and 0.01462 m;
-the last stage holds for 16.20 s. Navigation uses native COM truth; the optical
-marker is a visual cue, not an RGB-based estimator.
+control. Their measured final errors are 2.69778, 2.77960 and 0.01462 m;
+the last stage holds for 16.20 s. The revised first stage advances 14.09 m, drifts
+2.30 m sideways, and holds depth within 0.02 m. Only the first recording and
+poster were replaced; stages 02/03 retain their published bytes. Navigation uses
+native COM truth; the optical marker is a visual cue, not an RGB-based estimator.
 
 Tabs choose a recorded candidate, its measured outcome, scalar metrics and a
 position-error plot with a shared logarithmic scale. The evidence panel shows
