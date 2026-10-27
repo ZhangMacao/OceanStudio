@@ -14,11 +14,11 @@
   <link rel="canonical" href="https://zhangmacao.github.io/OceanStudio/">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261027-cinematic">
-  <link rel="stylesheet" href="workspace.css?v=20261027-cinematic">
-  <script src="app.js?v=20261027-cinematic" defer></script>
-  <script src="gallery.js?v=20261027-cinematic" defer></script>
-  <script src="workspace.js?v=20261027-cinematic" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261027-scene-reel">
+  <link rel="stylesheet" href="workspace.css?v=20261027-scene-reel">
+  <script src="app.js?v=20261027-scene-reel" defer></script>
+  <script src="gallery.js?v=20261027-scene-reel" defer></script>
+  <script src="workspace.js?v=20261027-scene-reel" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -312,37 +312,15 @@
           <div class="workspace-sink"><img src="assets/oceanstudio-logo.png" width="2048" height="719" loading="lazy" alt="OceanStudio"></div>
         </div>
         <section id="scene-films" class="cinematic-showcase" aria-labelledby="cinematic-heading">
-          <a class="cinematic-arrow" href="#cinematic-grid" aria-label="View UE scene films" data-i18n-aria="cinematicArrow"><svg viewBox="0 0 48 70" aria-hidden="true"><path d="M24 2v58M8 44l16 16 16-16"/></svg></a>
-          <div class="cinematic-heading-row"><h3 id="cinematic-heading" data-i18n="cinematicTitle">UE scene films</h3><button id="cinema-preview-toggle" type="button" disabled aria-pressed="false">Pause previews</button></div>
+          <a class="cinematic-arrow" href="#cinematic-grid" aria-label="View experiment film" data-i18n-aria="cinematicArrow"><svg viewBox="0 0 48 88" aria-hidden="true"><defs><marker id="cinematic-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="m1 1 7 4-7 4" fill="none" stroke="#6c92c6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="workspace-flow" d="M24 0V82" marker-end="url(#cinematic-arrowhead)"/></svg></a>
+          <div class="cinematic-heading-row"><h3 id="cinematic-heading" data-i18n="cinematicTitle">Support for diverse experiments</h3><button id="cinema-preview-toggle" type="button" disabled aria-pressed="false">Pause previews</button></div>
           <div id="cinematic-grid" class="capability-grid cinematic-grid">
-              <article class="capability-card cinematic-card" data-capability="reef-survey">
-                <a class="clip-open" href="assets/media/scenes/reef-survey.mp4" data-clip="reef-survey" aria-label="View video: Reef survey">
-                  <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/scenes/reef-survey.jpg" aria-label="Reef survey"></video>
-                  <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
-                </a>
-                <div class="capability-copy"><h4>Reef survey</h4></div>
-              </article>
-              <article class="capability-card cinematic-card" data-capability="canyon-descent">
-                <a class="clip-open" href="assets/media/scenes/canyon-descent.mp4" data-clip="canyon-descent" aria-label="View video: Canyon descent">
-                  <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/scenes/canyon-descent.jpg" aria-label="Canyon descent"></video>
-                  <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
-                </a>
-                <div class="capability-copy"><h4>Canyon descent</h4></div>
-              </article>
-              <article class="capability-card cinematic-card" data-capability="wreck-inspection">
-                <a class="clip-open" href="assets/media/scenes/wreck-inspection.mp4" data-clip="wreck-inspection" aria-label="View video: Wreck inspection">
-                  <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/scenes/wreck-inspection.jpg" aria-label="Wreck inspection"></video>
-                  <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
-                </a>
-                <div class="capability-copy"><h4>Wreck inspection</h4></div>
-              </article>
-              <article class="capability-card cinematic-card" data-capability="fleet-traverse">
-                <a class="clip-open" href="assets/media/scenes/fleet-traverse.mp4" data-clip="fleet-traverse" aria-label="View video: Fleet traverse">
-                  <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/scenes/fleet-traverse.jpg" aria-label="Fleet traverse"></video>
-                  <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
-                </a>
-                <div class="capability-copy"><h4>Fleet traverse</h4></div>
-              </article>
+            <article class="capability-card cinematic-card cinematic-reel" data-capability="scene-reel">
+              <a class="clip-open" href="assets/media/scenes/scene-reel.mp4" data-clip="scene-reel" aria-label="View video: Support for diverse experiments">
+                <video class="capability-video" muted loop playsinline preload="none" poster="assets/images/scenes/scene-reel.jpg" aria-label="Support for diverse experiments"></video>
+                <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
+              </a>
+            </article>
           </div>
           <details class="cinematic-credits"><summary data-i18n="sceneCredits">Scene credits</summary><p>“<a href="https://sketchfab.com/3d-models/sunk-boat-1a7ea3a4abf647b5858fb3f9b9cb0121">Sunk Boat</a>” by Just-Peeps (Gatturnart), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; scaled, recolored and placed in the scene. <a href="https://polyhaven.com/a/coast_sand_03">Coast Sand 03</a> and <a href="https://polyhaven.com/a/sand_rocks_small_01">Sand Rocks Small 01</a> by Poly Haven, CC0. Ocean-floor assets supplied under the project owner’s license. Scene layout, terrain and camera choreography by the OceanStudio project. <a href="assets/media/scenes/README.md" data-i18n="renderDetails">Rendering details</a></p></details>
         </section>

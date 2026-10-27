@@ -8,6 +8,10 @@ The loaded maps were checked in UE logs. PoseSensor readbacks for the robots and
 
 The downloadable H.264 MP4s retain 2560 × 1440 and all 300 frames. The VP9 WebM previews are 1920 × 1080; no frames are synthesized or added. The enlarged player selects the 1440p MP4. Raw frames, trajectory files, engine tools, world/model packages, capture scripts and machine configuration are private. Existing platform recordings and the English overview film are unchanged.
 
+## Continuous website reel
+
+The website uses one window titled “兼容多种任务实验” / “Support for diverse experiments”. `scene-reel.mp4` and `scene-reel.webm` join the four delivery streams in their original order, retaining all 1,200 frames on an approximately forty-second loop. They are concatenated without re-encoding; resolution and frame rate are preserved. Both the page preview and enlarged player show the complete reel, without individual scene-name captions. The original files and their provenance remain available in the manifest.
+
 ## Asset credits
 
 - **Sunk Boat**, by **Just-Peeps (Gatturnart)**: https://sketchfab.com/3d-models/sunk-boat-1a7ea3a4abf647b5858fb3f9b9cb0121 — **CC BY 4.0**, https://creativecommons.org/licenses/by/4.0/. Changes: mesh normalized and scaled, texture resolution adjusted, normal-channel conversion, recoloring and buried placement.

@@ -37,6 +37,7 @@
       titleFrame = 0;
       cards.forEach(card => {
         const title = card.querySelector('h4');
+        if (!title) return;
         const maximum = card.classList.contains('cinematic-card') ? 28 : 22;
         title.style.fontSize = `${maximum}px`;
         if (title.scrollWidth > title.clientWidth) {
@@ -65,7 +66,8 @@
     cards.forEach(card => {
       const data = items.get(card.dataset.capability);
       if (!data) return;
-      card.querySelector('h4').textContent = data.title[language];
+      const title = card.querySelector('h4');
+      if (title) title.textContent = data.title[language];
       card.querySelector('.clip-open').setAttribute('aria-label', text.open + data.title[language]);
       card.querySelector('video').setAttribute('aria-label', data.title[language]);
       const error = card.querySelector('.clip-error');
@@ -178,7 +180,7 @@
   });
 
   translate();
-  fetch('assets/media/capabilities/manifest.json?v=20261027-cinematic').then(response => {
+  fetch('assets/media/capabilities/manifest.json?v=20261027-scene-reel').then(response => {
     if (!response.ok) throw Error('manifest unavailable');
     return response.json();
   }).then(manifest => {
