@@ -4,7 +4,7 @@ The public website is a buildless, bilingual static page. GitHub Pages serves th
 
 ## Publication boundary
 
-Publish only `index.html`, `styles.css`, `app.js`, `gallery.js`, `.nojekyll`, and the explicitly selected assets under `assets/`: the transparent logo and favicon, Manrope font and its OFL license, selected stills and the finished English film, and the capability clips, their posters and public manifest. The platform source, editable video package, recording scripts, raw captures, experiment data, credentials, and machine configuration are excluded.
+Publish only `index.html`, `styles.css`, `app.js`, `gallery.js`, `workspace.js`, `workspace.css`, `.nojekyll`, and the explicitly selected assets under `assets/`: the transparent logo and favicon, Manrope font and its OFL license, selected stills and the finished English film, and the capability clips, their posters and public manifest. The platform source, editable video package, recording scripts, raw captures, experiment data, credentials, and machine configuration are excluded.
 
 The MP4 is the accepted English final film, not the editable video project. Screenshots are selected frames from that film. Native controls support playback, volume, fullscreen, and seeking. The chapter buttons jump to the film's existing chapter boundaries. Language changes translate the webpage and preserve the video element and playback position; the featured film stays English.
 
@@ -25,6 +25,12 @@ Browser terrain is the registered static GLB. It preserves the scene geometry wi
 Each clip is supplied as a 1080p H.264 MP4 and a VP9 WebM. Playback prefers WebM where supported; downloads and no-JavaScript links use MP4. Accelerated edits, if needed to keep a clip brief, are labeled with their playback rate.
 
 Muted previews load only when visible, with at most four playing at once. They pause outside the viewport, when the document is hidden, while the overview film plays, or while the video dialog is open. Reduced-motion preferences disable automatic playback. Every clip opens in a keyboard-accessible dialog with native playback controls and a direct download link. Without JavaScript, the cards still link directly to the MP4s. Language changes preserve the video elements and current dialog playback.
+
+## Human + agent workflow
+
+The workspace section is an illustrated animation, separate from the real capability recordings. Two enlarged routes converge on the transparent OceanStudio wordmark: the browser illustration selects a robot, adds sonar and sets a task with an animated cursor; the chat illustration types a task, sends it to an external AI agent and passes it to the platform. Only the section heading, route headings and essential interface labels remain visible. Supporting paragraphs, badges and the old text pipeline have been removed.
+
+`workspace.js` and `workspace.css` isolate the illustration. A single thirteen-second timeline coordinates clicks, typing and moving packets. Responsive SVG connectors are measured from the actual panels; on narrow layouts the upper route travels beside the second panel before joining the platform. English and Chinese share the timeline, and language changes keep the current position. Animation can be paused with a keyboard-accessible control; reduced-motion preferences start with a complete static illustration. It also stops outside the viewport, in hidden tabs, during the main film and while a capability dialog is open. No-JavaScript visitors see the complete static illustration. The animation makes no simulator, agent or backend requests and does not claim to be a live execution.
 
 ## Hosting
 
