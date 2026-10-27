@@ -4,7 +4,7 @@ The public website is a buildless, bilingual static page. GitHub Pages serves th
 
 ## Publication boundary
 
-Publish only `index.html`, `styles.css`, `app.js`, `gallery.js`, `workspace.js`, `workspace.css`, `.nojekyll`, and the explicitly selected assets under `assets/`: the transparent logo and favicon, external-agent identification icons and their provenance notice, Manrope font and its OFL license, selected stills and the finished English film, and the capability clips, their posters and public manifest. The platform source, editable video package, recording scripts, raw captures, experiment data, credentials, and machine configuration are excluded.
+Publish only `index.html`, `styles.css`, `app.js`, `gallery.js`, `workspace.js`, `workspace.css`, `.nojekyll`, and the explicitly selected assets under `assets/`: the transparent logo and favicon, external-agent identification icons and their provenance notice, Manrope font and its OFL license, selected stills and the finished English film, the capability clips, and the native UE scene films with their posters, public manifest and asset credits. The platform source, editable video package, recording scripts, raw captures, experiment data, credentials, and machine configuration are excluded.
 
 The MP4 is the accepted English final film, not the editable video project. Screenshots are selected frames from that film. Native controls support playback, volume, fullscreen, and seeking. The chapter buttons jump to the film's existing chapter boundaries. Language changes translate the webpage and preserve the video element and playback position; the featured film stays English.
 
@@ -33,6 +33,14 @@ The workspace section pairs real browser footage with an illustrated agent workf
 The agent roster pairs each example with an owner-sourced identification icon and adds an ellipsis for other agents. OpenAI's Blossom identifies Codex; DeepSeek's provider mark identifies the DeepSeek Harness example. Sources, owners and file hashes are recorded in [the agent asset notice](assets/agents/README.md). Icons are served locally with their original colors and proportions.
 
 `workspace.js` and `workspace.css` isolate the workflow. A thirteen-second timeline coordinates the right-hand typing and moving connector packets; the actual video recordings retain their original playback rate and switch on completion. Both routes pause with the shared keyboard-accessible control, outside the viewport, in hidden tabs, during the main film and while a capability dialog is open. Language and width changes keep the video element, playback position and animation progress. Reduced-motion preferences start with a static video poster and completed agent illustration. Without JavaScript, the first real recording has native controls. WebM falls back to MP4 on failure, with a direct link if playback fails. The section makes no simulator, agent or backend requests; the right-hand illustration does not claim a live execution.
+
+## Native scene-film output
+
+A downward arrow below the shared OceanStudio wordmark continues to four large, two-column scene-film cards. They show a kelp survey, canyon descent, wreck orbit and AUV + two ROV traverse. They were newly captured on 2026-10-27 in the native UE runtime from TrenchReef, TrenchCanyon and TrenchRift. Each master contains 300 RGB frames, 2560 × 1440 at 30 fps for ten seconds. Camera motion comes from an independent native camera carrier rather than the browser or the agent's automatic chase view.
+
+These are choreographed scene demonstrations using prescribed robot and camera poses, not autonomous planning, avoidance or closed-loop controller results. The enlarged player states that scope and selects the 1440p MP4; visible previews use 1080p VP9 WebM and share the existing four-decoder limit, pause controls, reduced motion, modal keyboard/focus handling and page language. The capability gallery retains its original twenty-two clips. Both preview-control buttons manage the shared preview preference. Without JavaScript, every scene card links directly to its MP4.
+
+Native logs confirm each selected map; all 1,200 frame positions were checked against native PoseSensor readbacks, including the independent camera. Per-film maximum translation error is below 0.000012 m, and all four engines exited normally. The video frame rate is an encoded timeline, not a claim of real-time UE performance. Public media metadata includes master and delivery hashes, frame count and render scope. Raw frame/trajectory records and runtime tools remain private. Render details and required third-party credits are maintained in [the scene-film notice](assets/media/scenes/README.md), with visible credits below the cards.
 
 ## Hosting
 

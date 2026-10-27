@@ -7,19 +7,19 @@
       pause: 'Pause previews', play: 'Play previews', close: 'Close video', download: 'Download clip',
       open: 'View video: ', unavailable: 'Preview unavailable. Select the clip to open the video.',
       loadError: 'Clip descriptions could not be loaded. The English previews remain available.',
-      ui: 'UI capture', cli: 'CLI capture', replay: 'UI + new run replay', setup: 'Import setup', inspection: 'Package checks + UI', seconds: 's', speed: 'speed'
+      cinematic: 'Native UE scene film', ui: 'UI capture', cli: 'CLI capture', replay: 'UI + new run replay', setup: 'Import setup', inspection: 'Package checks + UI', seconds: 's', speed: 'speed'
     },
     zh: {
       configure: '高度可配置', extend: '高度可扩展',
       pause: '暂停预览', play: '播放预览', close: '关闭视频', download: '下载短片',
       open: '观看短片：', unavailable: '预览暂不可用，可点击直接打开视频。',
       loadError: '短片说明加载失败，仍可查看英文卡片和视频。',
-      ui: '界面实录', cli: 'CLI 实录', replay: '界面与新实验回放', setup: '导入入口', inspection: '包检查与界面', seconds: '秒', speed: '倍速'
+      cinematic: 'UE 原生场景演示', ui: '界面实录', cli: 'CLI 实录', replay: '界面与新实验回放', setup: '导入入口', inspection: '包检查与界面', seconds: '秒', speed: '倍速'
     }
   };
   let language = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
   const cards = [...document.querySelectorAll('[data-capability]')];
-  const toggle = document.getElementById('preview-toggle');
+  const toggles = ['preview-toggle','cinema-preview-toggle'].map(id => document.getElementById(id)).filter(Boolean);
   const dialog = document.getElementById('clip-dialog');
   const dialogVideo = document.getElementById('clip-dialog-video');
   const mainVideo = document.getElementById('demo-video');
@@ -37,9 +37,10 @@
       titleFrame = 0;
       cards.forEach(card => {
         const title = card.querySelector('h4');
-        title.style.fontSize = '22px';
+        const maximum = card.classList.contains('cinematic-card') ? 28 : 22;
+        title.style.fontSize = `${maximum}px`;
         if (title.scrollWidth > title.clientWidth) {
-          const size = Math.max(18, Math.floor(22 * (title.clientWidth - 2) / title.scrollWidth * 10) / 10);
+          const size = Math.max(18, Math.floor(maximum * (title.clientWidth - 2) / title.scrollWidth * 10) / 10);
           title.style.fontSize = `${size}px`;
         }
       });
@@ -57,8 +58,10 @@
     document.querySelectorAll('[data-gallery-copy]').forEach(el => {
       el.textContent = text[el.dataset.galleryCopy];
     });
-    toggle.textContent = autoPlay ? text.pause : text.play;
-    toggle.setAttribute('aria-pressed', String(autoPlay));
+    toggles.forEach(toggle => {
+      toggle.textContent = autoPlay ? text.pause : text.play;
+      toggle.setAttribute('aria-pressed', String(autoPlay));
+    });
     cards.forEach(card => {
       const data = items.get(card.dataset.capability);
       if (!data) return;
@@ -97,6 +100,7 @@
   }
 
   function playbackSource(video,data) {
+    if (video === dialogVideo && data.kind === 'cinematic') return data.video;
     return data.preview_video && video.canPlayType('video/webm; codecs="vp9"') ? data.preview_video : data.video;
   }
 
@@ -152,11 +156,11 @@
     if (origin?.isConnected) origin.focus({preventScroll:true});
     syncPlayback();
   });
-  toggle.addEventListener('click', () => {
+  toggles.forEach(toggle => toggle.addEventListener('click', () => {
     autoPlay = !autoPlay;
     try { localStorage.setItem('oceanstudio-preview-motion', autoPlay ? 'playing' : 'paused'); } catch {}
     translate(); syncPlayback();
-  });
+  }));
   motion.addEventListener('change', event => {
     if (event.matches) autoPlay = false;
     translate(); syncPlayback();
@@ -174,12 +178,12 @@
   });
 
   translate();
-  fetch('assets/media/capabilities/manifest.json?v=20261026-controller-titles').then(response => {
+  fetch('assets/media/capabilities/manifest.json?v=20261027-cinematic').then(response => {
     if (!response.ok) throw Error('manifest unavailable');
     return response.json();
   }).then(manifest => {
     items = new Map(manifest.items.map(data => [data.id,data]));
-    translate(); toggle.disabled = false;
+    translate(); toggles.forEach(toggle => { toggle.disabled = false; });
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {

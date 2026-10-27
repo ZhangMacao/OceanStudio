@@ -649,6 +649,162 @@
       "playback_rate": 1.0,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
+    },
+    {
+      "id": "reef-survey",
+      "group": "cinematic",
+      "kind": "cinematic",
+      "title": {
+        "en": "Reef survey",
+        "zh": "海草区巡航"
+      },
+      "description": {
+        "en": "A following camera moves through kelp and rolling seabed with a Torpedo AUV.",
+        "zh": "跟随相机沿海草和起伏海床，展示 Torpedo AUV 的巡航镜头。"
+      },
+      "scope": {
+        "en": "UE scene demonstration with prescribed vehicle poses and camera choreography. This is not a closed-loop controller, autonomous planning or collision-avoidance result.",
+        "zh": "UE 场景展示，使用预设载体位姿和相机运镜；不作为闭环控制、自主规划或自主避障的验收结果。"
+      },
+      "video": "assets/media/scenes/reef-survey.mp4",
+      "preview_video": "assets/media/scenes/reef-survey.webm",
+      "poster": "assets/images/scenes/reef-survey.jpg",
+      "duration": 10.0,
+      "width": 2560,
+      "height": 1440,
+      "preview_width": 1920,
+      "preview_height": 1080,
+      "fps": 30,
+      "frames": 300,
+      "playback_rate": 1.0,
+      "sha256": "05cf07f9012936558e826f95db5e6d139f90482799e67e82aaee94ed099092e4",
+      "preview_sha256": "43072c1e2a48c5a4589b4d7e8f4e329a6853bfee7bc53614cc34e461b80d3e4b",
+      "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
+      "world": "TrenchReef",
+      "engine_map": "/Game/OpenUnderwater/Maps/TrenchReef.TrenchReef",
+      "scene_package": "TrenchReefScenes 1.0.0",
+      "capture_date": "2026-10-27",
+      "raw_master_sha256": "4ca742a422c4520be39b426b4f5e0ee32f7d1d60909747c50b0aa9c9cac7cd88",
+      "raw_rgb_stream_sha256": "c276100cc8bfcb6d8abf465efacb3a7648a32eef0fd2ad7be955c88529b247a5",
+      "max_native_pose_error_m": 8.184706943591916e-06,
+      "native_engine_stopped": true
+    },
+    {
+      "id": "canyon-descent",
+      "group": "cinematic",
+      "kind": "cinematic",
+      "title": {
+        "en": "Canyon descent",
+        "zh": "海沟下降"
+      },
+      "description": {
+        "en": "A Torpedo AUV descends through a canyon with a sweeping, terrain-aware camera path.",
+        "zh": "Torpedo AUV 沿海谷下降，自由相机随地形变化完成跟拍。"
+      },
+      "scope": {
+        "en": "UE scene demonstration with prescribed vehicle poses and camera choreography. This is not a closed-loop controller, autonomous planning or collision-avoidance result.",
+        "zh": "UE 场景展示，使用预设载体位姿和相机运镜；不作为闭环控制、自主规划或自主避障的验收结果。"
+      },
+      "video": "assets/media/scenes/canyon-descent.mp4",
+      "preview_video": "assets/media/scenes/canyon-descent.webm",
+      "poster": "assets/images/scenes/canyon-descent.jpg",
+      "duration": 10.0,
+      "width": 2560,
+      "height": 1440,
+      "preview_width": 1920,
+      "preview_height": 1080,
+      "fps": 30,
+      "frames": 300,
+      "playback_rate": 1.0,
+      "sha256": "b78179d7377fd6a98d408afc3a22599b242b247edcc035f8e941e759847696bd",
+      "preview_sha256": "caf6317d2533259e90149117287e5b4b295daab42e8ba39dc73c6e2937caaeac",
+      "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
+      "world": "TrenchCanyon",
+      "engine_map": "/Game/OpenUnderwater/Maps/TrenchCanyon.TrenchCanyon",
+      "scene_package": "TrenchReefScenes 1.0.0",
+      "capture_date": "2026-10-27",
+      "raw_master_sha256": "79c2afb70ace28825ccdab13140119f01edcdece5d8bcb6400b0ae7940fcad71",
+      "raw_rgb_stream_sha256": "eccd8b84e6f83ad1c8aea5e8cb60ac9987de2b7e33be8a0715d0645dc5975320",
+      "max_native_pose_error_m": 1.1104415635088027e-05,
+      "native_engine_stopped": true
+    },
+    {
+      "id": "wreck-inspection",
+      "group": "cinematic",
+      "kind": "cinematic",
+      "title": {
+        "en": "Wreck inspection",
+        "zh": "沉船绕行"
+      },
+      "description": {
+        "en": "An orbiting camera reveals a sunken hull while an AUV circles the inspection area.",
+        "zh": "AUV 绕行沉船区域，相机以环绕镜头展示船体、植被与水下光影。"
+      },
+      "scope": {
+        "en": "UE scene demonstration with prescribed vehicle poses and camera choreography. This is not a closed-loop controller, autonomous planning or collision-avoidance result.",
+        "zh": "UE 场景展示，使用预设载体位姿和相机运镜；不作为闭环控制、自主规划或自主避障的验收结果。"
+      },
+      "video": "assets/media/scenes/wreck-inspection.mp4",
+      "preview_video": "assets/media/scenes/wreck-inspection.webm",
+      "poster": "assets/images/scenes/wreck-inspection.jpg",
+      "duration": 10.0,
+      "width": 2560,
+      "height": 1440,
+      "preview_width": 1920,
+      "preview_height": 1080,
+      "fps": 30,
+      "frames": 300,
+      "playback_rate": 1.0,
+      "sha256": "6ffe628e617219ec5832cd8f94a9f3f6c10dfb2c911d5541de1559bbfab15dc7",
+      "preview_sha256": "89a2baa17227f4029fbda9a6641045dc5fc45a21100f702519802c9f9e862f5f",
+      "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
+      "world": "TrenchReef",
+      "engine_map": "/Game/OpenUnderwater/Maps/TrenchReef.TrenchReef",
+      "scene_package": "TrenchReefScenes 1.0.0",
+      "capture_date": "2026-10-27",
+      "raw_master_sha256": "061e398121711b3da1732a41819c15e045c8e9b23381a1b9259d726be831bdfb",
+      "raw_rgb_stream_sha256": "0cde02f86cb05ed3d2238ccb3976a653e43048deacdc007c39ddf4973520fd31",
+      "max_native_pose_error_m": 2.1054830979362124e-06,
+      "native_engine_stopped": true
+    },
+    {
+      "id": "fleet-traverse",
+      "group": "cinematic",
+      "kind": "cinematic",
+      "title": {
+        "en": "Fleet traverse",
+        "zh": "多机器人编队"
+      },
+      "description": {
+        "en": "One Torpedo AUV and two hovering ROVs traverse a deep rift in a choreographed formation.",
+        "zh": "一台 Torpedo AUV 与两台悬停型 ROV，以编排队形穿过深裂沟。"
+      },
+      "scope": {
+        "en": "UE scene demonstration with prescribed vehicle poses and camera choreography. This is not a closed-loop controller, autonomous planning or collision-avoidance result.",
+        "zh": "UE 场景展示，使用预设载体位姿和相机运镜；不作为闭环控制、自主规划或自主避障的验收结果。"
+      },
+      "video": "assets/media/scenes/fleet-traverse.mp4",
+      "preview_video": "assets/media/scenes/fleet-traverse.webm",
+      "poster": "assets/images/scenes/fleet-traverse.jpg",
+      "duration": 10.0,
+      "width": 2560,
+      "height": 1440,
+      "preview_width": 1920,
+      "preview_height": 1080,
+      "fps": 30,
+      "frames": 300,
+      "playback_rate": 1.0,
+      "sha256": "9db938a54b451f46b9e206c3fc58754dc91eadee5a923d9a9caf58df76c1ddb8",
+      "preview_sha256": "dfdf24c679e9adccbc18c69c911d209b415ac28de684cd62d53bb1ac34270713",
+      "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
+      "world": "TrenchRift",
+      "engine_map": "/Game/OpenUnderwater/Maps/TrenchRift.TrenchRift",
+      "scene_package": "TrenchReefScenes 1.0.0",
+      "capture_date": "2026-10-27",
+      "raw_master_sha256": "0db71c0139fcc6035961be8e4f22482a8c011d3d6283777f6f9dc57288711e28",
+      "raw_rgb_stream_sha256": "5513acc76e5f855b791f14bc04649f57dd40e90df7c045f41c2a520bb07e82f7",
+      "max_native_pose_error_m": 1.1206740539710458e-05,
+      "native_engine_stopped": true
     }
   ]
 }
