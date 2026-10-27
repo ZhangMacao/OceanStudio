@@ -15,9 +15,9 @@
     en: {
       loopLabel:'A goal passes to an agent, experiment setup, simulation, evaluation, and back to the agent.',
       goalLabel:'Describe your goal',goal:'Guide the AUV into the docking cage.',analysis:'Analyze & improve',analysisCopy:'Evaluate · Compare · Revise',setup:'Experiment setup',vehicle:'Vehicle',task:'Task',docking:'Cage docking',design:'Design',algorithms:'Guidance & control',run:'Run simulation',
-      caseTitle:'From drift to precise docking.',trialsLabel:'Docking experiment iterations',
-      trial0:'Drifts off course',trial1:'Imprecise approach',trial2:'Successful docking',notMet:'Not met',passed:'Docked & stable',
-      agentRevision:'Agent revision',revision0:'Fixed thrust without feedback.',revision1:'Heading and speed feedback, without terminal correction.',revision2:'Current-compensated LOS and closed-loop docking control.',
+      caseTitle:'From lateral drift to precise docking.',trialsLabel:'Docking experiment iterations',
+      trial0:'Lateral drift',trial1:'Imprecise approach',trial2:'Successful docking',notMet:'Not met',passed:'Docked & stable',
+      agentRevision:'Agent revision',revision0:'Forward approach without lateral correction.',revision1:'Heading and speed feedback, without terminal correction.',revision2:'Current-compensated LOS and closed-loop docking control.',
       finalError:'Final position error',progress:'Forward progress',stableHold:'Continuous stable hold',positionError:'Position error · log scale',chartLabel:'Position error versus experiment time, on a logarithmic scale',
       rate:'Native UE · 2× playback',openVideo:'Open video',pause:'Pause animation & previews',resume:'Play animation & previews',
       videoLabel:'Yellow torpedo AUV docking experiment',
@@ -25,9 +25,9 @@
     zh: {
       loopLabel:'目标交给 Agent，配置实验、运行仿真、评估结果，再反馈给 Agent 修改方案。',
       goalLabel:'描述研究目标',goal:'让 AUV 精准进入对接笼。',analysis:'Agent 分析与优化',analysisCopy:'评估 · 对比 · 修订',setup:'配置实验',vehicle:'机器人',task:'任务',docking:'对接笼进近',design:'算法',algorithms:'引导与动力学控制',run:'运行仿真',
-      caseTitle:'从漂移失控，到精准对接。',trialsLabel:'对接实验迭代',
-      trial0:'漂移失控',trial1:'进近偏差',trial2:'精准对接',notMet:'未达标',passed:'对接并稳定',
-      agentRevision:'Agent 修改方案',revision0:'无反馈固定推力。',revision1:'航向与航速反馈，尚无末段精确修正。',revision2:'水流补偿 LOS 与闭环对接控制。',
+      caseTitle:'从横向漂移，到精准对接。',trialsLabel:'对接实验迭代',
+      trial0:'横向漂移',trial1:'进近偏差',trial2:'精准对接',notMet:'未达标',passed:'对接并稳定',
+      agentRevision:'Agent 修改方案',revision0:'稳定前进与定深，缺少横向修正。',revision1:'航向与航速反馈，尚无末段精确修正。',revision2:'水流补偿 LOS 与闭环对接控制。',
       finalError:'最终位置误差',progress:'前进距离',stableHold:'连续稳定保持',positionError:'位置误差 · 对数尺度',chartLabel:'位置误差随实验时间变化，对数纵轴',
       rate:'原生 UE · 2 倍速',openVideo:'直接播放视频',pause:'暂停动画与预览',resume:'播放动画与预览',
       videoLabel:'黄色鱼雷形 AUV 坞站对接实验',
@@ -88,8 +88,9 @@
     document.getElementById('docking-panel').setAttribute('aria-labelledby', tabs[selected].id);
     const id = 'round-0' + (selected + 1);
     pauseVideo(); changing = true; sourceFallback = false;
-    video.poster = `assets/images/docking/${id}.jpg?v=20261027-compact`;
-    video.src = `assets/media/docking/${id}.mp4?v=20261027-compact`;
+    const revision = selected === 0 ? '20261027-lateral' : '20261027-compact';
+    video.poster = `assets/images/docking/${id}.jpg?v=${revision}`;
+    video.src = `assets/media/docking/${id}.mp4?v=${revision}`;
     document.getElementById('docking-fallback').href = video.src;
     document.getElementById('docking-fallback').hidden = true;
     video.load(); loaded = true; renderEvidence();
@@ -192,6 +193,6 @@
   if (clipDialog) new MutationObserver(synchronize).observe(clipDialog,{attributes:true,attributeFilter:['open']});
   reduced.addEventListener('change', () => { stopped=reduced.matches;labelMotion();synchronize(); });
   document.addEventListener('oceanstudio:language', event => { language = event.detail.language; translate(); });
-  fetch('assets/media/docking/study.json?v=20261027-compact').then(r => {if(!r.ok)throw Error('study unavailable');return r.json();}).then(data => {study=data;renderEvidence();}).catch(() => {});
+  fetch('assets/media/docking/study.json?v=20261027-lateral').then(r => {if(!r.ok)throw Error('study unavailable');return r.json();}).then(data => {study=data;renderEvidence();}).catch(() => {});
   translate(); connect();
 })();

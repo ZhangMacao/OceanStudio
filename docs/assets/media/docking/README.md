@@ -1,8 +1,8 @@
 # Fixed-condition compact funnel-docking study
 
 These native UE recordings show three deliberately distinct control stages in a
-Codex-driven experiment: fixed low thrust, coarse heading control, and terminal
-LOS docking control. The page diagram illustrates the outer research loop; it
+Codex-driven experiment: lateral drift, coarse heading control, and terminal LOS
+docking control. The page diagram illustrates the outer research loop; it
 does not run an agent or simulator in the visitor's browser. Failed trials and
 development probes are retained privately. This is a controlled demonstration,
 not a general performance ranking of controller families.
@@ -39,12 +39,17 @@ consecutive qualifying samples; the first sample contributes zero elapsed time.
 
 | Recording | Control stage | Forward progress | Final position error | Stable hold | Verdict |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Fixed 120 RPM, zero fins, no navigation feedback | -35.17084 m | 49.35785 m | 0 s | Not met |
+| 01 | Forward speed/depth/heading hold, without lateral position correction | 14.08978 m | 2.69778 m | 0 s | Not met |
 | 02 | Initial-bearing heading and speed feedback, without terminal alignment | 13.74178 m | 2.77960 m | 0 s | Not met |
 | 03 | Current-compensated LOS, damped guidance and stable depth/speed control | 14.09062 m | 0.01462 m | 16.20 s | Passed |
 
-Stage 01 intentionally uses insufficient fixed propulsion and drifts backward.
-Stage 02 approaches the station but remains offset from the receiver. Stage 03
+Stage 01 advances 14.08978 m while drifting 2.29773 m sideways from its initial
+position. Its maximum depth error is 0.01793 m; the brief startup backward
+excursion is 0.01082 m. It misses the cage laterally rather than retreating.
+The original underpowered take is retained privately and has been replaced only
+in the first tab. Stage 02 and 03 recordings and posters retain their published
+bytes. These are different failure modes, not a monotonic improvement in every
+scalar metric. Stage 02 approaches but remains offset from the receiver. Stage 03
 first completes the three-second acceptance window at 46.80 s; its final speed is
 0.00126 m/s and heading error 4.54293 degrees. All three native engines exited
 normally and all observed time-step checks passed.
@@ -58,9 +63,9 @@ general disturbance robustness.
 ## Media and evidence
 
 Each master contains 1,501 native 2560 × 1440 RGB observations at 25 Hz. The
-independent camera follows a common framing rule; it moves farther away when
-stage 01 drifts. AUV motion is produced by force-derived accelerations integrated
-by UE. Public MP4s show the complete experiment at **2× playback**, encoded at
+independent camera follows the same framing rule in each run. AUV motion is
+produced by force-derived accelerations integrated by UE. Public MP4s show the
+complete experiment at **2× playback**, encoded at
 25 fps. The plotted scalar error curve contains half-second means derived from
 saved states; the playhead maps back to experiment time.
 
