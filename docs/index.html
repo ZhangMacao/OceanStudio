@@ -14,9 +14,11 @@
   <link rel="canonical" href="https://zhangmacao.github.io/OceanStudio/">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preload" href="assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261026-gallery-titles">
-  <script src="app.js?v=20261026-gallery-titles" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261027-workspace">
+  <link rel="stylesheet" href="workspace.css?v=20261027-workspace">
+  <script src="app.js?v=20261027-workspace" defer></script>
   <script src="gallery.js?v=20261026-gallery-titles" defer></script>
+  <script src="workspace.js?v=20261027-workspace" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -255,14 +257,74 @@
     </section>
 
     <section id="workspace" class="workspace-section section" aria-labelledby="workspace-heading">
-      <div class="wrap">
-        <div class="section-intro"><h2 id="workspace-heading" data-i18n="workspaceTitle">A shared workspace for humans and agents</h2><p data-i18n="workspaceIntro">Design experiments visually or operate the same platform through LLM agents. Both paths use shared experiment configurations and validation.</p></div>
-        <div class="two-paths">
-          <article class="visual-path"><div class="path-heading"><h3 data-i18n="visualTitle">Work visually</h3><span data-i18n="visualLabel">Browser workspace</span></div><img src="assets/images/visual.jpg" width="1280" height="720" loading="lazy" alt="OceanStudio sensor assembly and vehicle configuration" data-i18n-alt="visualAlt"><p data-i18n="visualCopy">Select a vehicle, attach sensors, inspect the scene, and refine the experiment in context.</p></article>
-          <article class="agent-path"><div class="path-heading"><h3 data-i18n="agentTitle">Work through an agent</h3><span>CLI + Skills <span aria-hidden="true">/</span> MCP</span></div><blockquote data-i18n="examplePrompt">Configure an AUV with depth and sonar sensing. Compare candidate controllers on an S-shaped path under the same current and evaluation criteria.</blockquote><div class="agent-names" aria-label="Example external agents"><span>Codex</span><span>Claude Code</span><span>OpenCode</span><span>DeepSeek Harness</span></div><p data-i18n="agentCopy">Extend scenes, sensor models, and control algorithms through explicit interfaces. Namespaced plugins let new implementations coexist with existing ones.</p></article>
+      <div class="workspace-wrap">
+        <div class="workspace-heading-row">
+          <h2 id="workspace-heading" data-i18n="workspaceTitle">A shared workspace for humans and agents</h2>
+          <button class="workspace-toggle" type="button" hidden aria-label="Pause animation" title="Pause animation" data-paused="false">
+            <svg class="pause-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>
+            <svg class="play-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 4 13 8-13 8z"/></svg>
+          </button>
         </div>
-        <div class="shared-pipeline" aria-label="Shared experiment pipeline" data-i18n-aria="pipelineLabel"><span data-i18n="sharedConfiguration">Shared configuration</span><span aria-hidden="true">→</span><span data-i18n="validation">Validation</span><span aria-hidden="true">→</span><span data-i18n="simulation">Simulation</span><span aria-hidden="true">→</span><span data-i18n="evaluation">Evaluation</span></div>
-        <p class="scope-note" data-i18n="extensionScope">Native axis-controller plugins can enter supported native tasks after review and explicit activation. Reference sensors, kinematics, and hydrodynamic plugins retain their own runtime requirements.</p>
+        <p class="sr-only" id="workspace-summary" data-workspace-copy="summary">Workflow illustration: a researcher selects a robot, adds a sensor and sets a task in the browser. A written request passes to an external AI agent. Both routes connect to the OceanStudio platform.</p>
+        <div class="workspace-diagram" role="group" aria-describedby="workspace-summary">
+          <div class="interaction-paths">
+            <article class="workspace-path">
+              <h3 data-i18n="visualTitle">Work visually</h3>
+              <div class="browser-demo" data-flow-start="visual" aria-hidden="true">
+                <div class="browser-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><strong>OceanStudio</strong><span class="browser-dots"><i></i><i></i><i></i></span></div>
+                <div class="demo-options">
+                  <span class="demo-option is-selected" data-demo-option="robot"><svg viewBox="0 0 24 24"><path d="m4 16 3-8h10l3 8zM7 8V5h10v3M2 16h20M8 12h1m6 0h1"/></svg><span data-workspace-copy="robot">Robot</span></span>
+                  <span class="demo-option" data-demo-option="sensor"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4m8.4 0a6 6 0 0 0 0-8.4M5 5a10 10 0 0 0 0 14m14 0a10 10 0 0 0 0-14"/></svg><span data-workspace-copy="sensor">Sensors</span></span>
+                  <span class="demo-option" data-demo-option="task"><svg viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M5 16v-3a4 4 0 0 1 4-4h6a4 4 0 0 0 4-3M9 5l3 4-3 4"/></svg><span data-workspace-copy="task">Task</span></span>
+                </div>
+                <div class="ocean-preview">
+                  <svg viewBox="0 0 440 320" fill="none">
+                    <g class="preview-grid"><path d="M-30 210 235 80 500 210M-30 245 235 115 500 245M-30 280 235 150 500 280M-30 315 235 185 500 315M-30 350 235 220 500 350M-30 385 235 255 500 385M-30 420 235 290 500 420M-20 205 245 335M25 180 290 310M70 155 335 285M115 130 380 260M160 105 425 235M205 80 470 210"/></g>
+                    <path class="preview-route" d="M35 242c70-90 126-86 184-24s128 76 201-18"/>
+                    <g class="preview-sonar"><path d="m259 168 100-85a132 132 0 0 1 20 126z"/><path d="M286 145a38 38 0 0 1 7 36m17-56a67 67 0 0 1 12 65m11-85a99 99 0 0 1 17 94" fill="none"/></g>
+                    <ellipse cx="217" cy="224" rx="105" ry="13" fill="#bed1df" opacity=".35"/>
+                    <g transform="rotate(23 220 164)">
+                      <path d="m116 153-22-18 2 29-15 14 36 1m8-26 10-33 17 33m-19 24 13 28 12-28" fill="#566b80" stroke="#304b61" stroke-width="2"/>
+                      <path d="M119 150h144c31 0 55 11 63 18-9 13-33 20-63 20H119c-15 0-20-38 0-38Z" fill="#f4ce5a" stroke="#bf9a32" stroke-width="2"/>
+                      <path d="M118 151v36m23-37v38m132-37v36" stroke="#967e3a" stroke-width="2"/>
+                      <path d="M286 154c21 4 33 9 40 14-8 9-21 14-40 17Z" fill="#304b61"/>
+                      <path d="M159 152h82" stroke="#fff1bb" stroke-width="5" stroke-linecap="round"/>
+                      <path d="M219 150v-15h14v15" fill="#304b61"/>
+                      <circle class="preview-sensor" cx="251" cy="166" r="8"/>
+                    </g>
+                  </svg>
+                </div>
+                <span class="demo-run"><svg viewBox="0 0 18 18"><path d="m5 3 10 6-10 6z"/></svg><span data-workspace-copy="run">Run experiment</span></span>
+                <span class="demo-click"></span>
+                <svg class="demo-cursor" viewBox="0 0 29 35"><path d="M2 2v25l7-6 6 12 5-3-6-11h10Z" fill="white" stroke="#16344a" stroke-width="2" stroke-linejoin="round"/></svg>
+              </div>
+            </article>
+            <article class="workspace-path">
+              <h3 data-i18n="agentTitle">Work through an agent</h3>
+              <div class="agent-demo" aria-hidden="true">
+                <div class="chat-demo">
+                  <span class="chat-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span>
+                  <div class="prompt-text"><span class="prompt-sizer" data-workspace-copy="prompt">Configure an AUV with sonar. Run an S-shaped mission.</span><span class="prompt-typed"><span class="prompt-typed-copy">Configure an AUV with sonar. Run an S-shaped mission.</span><span class="typing-caret" style="opacity:0"></span></span></div>
+                  <span class="prompt-send"><svg viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></span>
+                </div>
+                <svg class="prompt-bridge" viewBox="0 0 32 56" preserveAspectRatio="none"><path d="M16 0v48m-5-6 5 6 5-6" stroke="currentColor" stroke-width="2" fill="none"/><circle class="prompt-particle" cx="16" cy="3" r="4" fill="#2459df" opacity="0"/></svg>
+                <div class="agent-core" data-flow-start="agent">
+                  <div class="agent-core-heading"><svg viewBox="0 0 36 36"><rect x="5" y="10" width="26" height="20" rx="6"/><path d="M18 10V5m-5 16h.1m9.9 0h.1M13 26h10M1 18v6m34-6v6"/><circle cx="18" cy="4" r="2"/></svg><span data-workspace-copy="agent">AI Agent</span></div>
+                  <div class="agent-roster"><span>Codex</span><span>Claude Code</span><span>OpenCode</span><span>DeepSeek Harness</span></div>
+                  <span class="agent-activity"></span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <svg class="workspace-flows" aria-hidden="true" focusable="false">
+            <defs><marker id="workspace-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="m1 1 7 4-7 4" fill="none" stroke="#6c92c6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <path class="workspace-flow" data-flow="visual" marker-end="url(#workspace-arrow)"/>
+            <path class="workspace-flow" data-flow="agent" marker-end="url(#workspace-arrow)"/>
+            <circle class="flow-halo" data-halo="visual" r="10"/><circle class="flow-particle" data-particle="visual" r="4"/>
+            <circle class="flow-halo" data-halo="agent" r="10"/><circle class="flow-particle" data-particle="agent" r="4"/>
+          </svg>
+          <div class="workspace-sink"><img src="assets/oceanstudio-logo.png" width="2048" height="719" loading="lazy" alt="OceanStudio"></div>
+        </div>
       </div>
     </section>
 
