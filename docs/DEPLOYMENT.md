@@ -4,7 +4,7 @@ The public website is a buildless, bilingual static page. GitHub Pages serves th
 
 ## Publication boundary
 
-Publish only `index.html`, `styles.css`, `app.js`, `gallery.js`, `workspace.js`, `workspace.css`, `.nojekyll`, and the explicitly selected assets under `assets/`: the transparent logo and favicon, external-agent identification icons and their provenance notice, Manrope font and its OFL license, selected stills and the finished English film, the capability clips, and the native UE scene films with their posters, public manifest and asset credits. The platform source, editable video package, recording scripts, raw captures, experiment data, credentials, and machine configuration are excluded.
+Publish only `index.html`, `styles.css`, `app.js`, `gallery.js`, `workspace.js`, `workspace.css`, `research.js`, `research.css`, `.nojekyll`, and the explicitly selected assets under `assets/`: the transparent logo and favicon, external-agent identification icons and their provenance notice, Manrope font and its OFL license, selected stills and the finished English film, the capability clips, the native UE scene films with their posters, public manifest and asset credits, and the docking recordings with a curated metric summary and experiment-method notice. The platform source, editable video package, recording scripts, raw captures, experiment data, credentials, and machine configuration are excluded.
 
 The MP4 is the accepted English final film, not the editable video project. Screenshots are selected frames from that film. Native controls support playback, volume, fullscreen, and seeking. The chapter buttons jump to the film's existing chapter boundaries. Language changes translate the webpage and preserve the video element and playback position; the featured film stays English.
 
@@ -41,6 +41,33 @@ A pale-blue downward arrow below the shared OceanStudio wordmark uses the same t
 These are choreographed scene demonstrations using prescribed robot and camera poses, not autonomous planning, avoidance or closed-loop controller results. The cinematic player shows only its title, video and controls, and selects the continuous 1440p MP4; the preview uses a continuous 1080p VP9 WebM and shares the existing four-decoder limit, pause controls, reduced motion, modal keyboard/focus handling and page language. The capability gallery retains its original twenty-two clips. Both preview-control buttons manage the shared preview preference. Without JavaScript, the single video window links directly to the full MP4.
 
 The forty-second reel uses stream-copy concatenation: 1,200 original frames, unchanged resolution and frame rate, with no new rendering or quality loss from re-encoding. Native logs confirm each selected map; all 1,200 frame positions were checked against native PoseSensor readbacks, including the independent camera. Per-film maximum translation error is below 0.000012 m, and all four engines exited normally. The video frame rate is an encoded timeline, not a claim of real-time UE performance. Public media metadata includes master and delivery hashes, frame count and render scope. Raw frame/trajectory records and runtime tools remain private. Render details and required third-party credits are maintained in [the scene-film notice](assets/media/scenes/README.md), without rendering the credits, capture description or scope paragraphs in the website video section or cinematic player. The notice and manifest retain the underlying attribution and recording facts. Capability-clip details remain available in their own player.
+
+## Autoresearch loop and docking study
+
+The autoresearch section follows the goal → agent → setup → native simulation →
+analysis → agent loop. The diagram reuses the workspace palette, arrowheads and
+local agent icons. Its animation is illustrative; the dock recordings below it
+are separate real native runs. There is no live agent or simulator connection in
+this static website.
+
+A yellow native TorpedoAUV approaches a size-matched hollow funnel with one
+central green emissive beacon and one real UE spot light. The station light is
+cooked with UE 5.3.2 into an isolated Linux content package. The existing terrain
+is referenced as a streamed level; its original world package and the formal
+service are unchanged. Station, initial state, Fossen model, fixed head-current,
+clock, duration and independent acceptance conditions stay fixed across the
+published variants. The LOS/controller revisions operate on native COM truth;
+the optical marker is a visual cue, not a claimed RGB-based estimator.
+
+Tabs choose a recorded candidate, its measured outcome, scalar metrics and a
+position-error plot. Recorded videos play at 2×; the plot playhead maps back to
+experiment time. Language changes preserve playback and the selected round.
+Native controls, a shared research pause button, offscreen/hidden-tab suspension,
+main-film/modal suspension, keyboard tabs and reduced-motion preferences are
+supported. Without JavaScript, the first MP4 retains native controls. Only
+finished recordings, posters, a curated summary of metrics and hashes, and the
+method notice are published. Source algorithms, UE projects, cooked assets,
+per-frame telemetry, capture tools and private profiles remain private.
 
 ## Hosting
 
