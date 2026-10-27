@@ -3,11 +3,11 @@
   const section = document.getElementById('workspace');
   if (!section) return;
   const diagram = section.querySelector('.workspace-diagram');
-  const browser = section.querySelector('.browser-demo');
+  const recording = section.querySelector('.visual-recording');
+  const video = document.getElementById('workspace-video');
+  const fallback = section.querySelector('.workspace-video-fallback');
   const agent = section.querySelector('.agent-demo');
   const sink = section.querySelector('.workspace-sink');
-  const cursor = section.querySelector('.demo-cursor');
-  const click = section.querySelector('.demo-click');
   const typed = section.querySelector('.prompt-typed-copy');
   const caret = section.querySelector('.typing-caret');
   const toggle = section.querySelector('.workspace-toggle');
@@ -18,16 +18,16 @@
   const dialog = document.getElementById('clip-dialog');
   const words = {
     en: {
-      robot: 'Robot', sensor: 'Sensors', task: 'Task', run: 'Run experiment',
+      recording: 'OceanStudio visual configuration recording', openRecording: 'Open the recording', more: 'More agents',
       prompt: 'Configure an AUV with sonar. Run an S-shaped mission.',
       agent: 'AI Agent', pause: 'Pause animation', play: 'Play animation',
-      summary: 'Workflow illustration: a researcher selects a robot, adds a sensor and sets a task in the browser. A written request passes to an external AI agent. Both routes connect to the OceanStudio platform.'
+      summary: 'Real OceanStudio recordings show vehicle selection, sensor configuration and task setup. An illustrated written request passes to an external AI agent such as Codex, Claude Code, OpenCode or DeepSeek Harness, with more agents supported. Both routes connect to the OceanStudio platform.'
     },
     zh: {
-      robot: '机器人', sensor: '传感器', task: '任务', run: '运行实验',
+      recording: 'OceanStudio 可视化配置实录', openRecording: '直接打开实录视频', more: '支持更多 Agent',
       prompt: '配置一台带声呐的 AUV，执行 S 型巡航任务。',
       agent: 'AI Agent', pause: '暂停动画', play: '播放动画',
-      summary: '工作流示意：研究者在浏览器中选择机器人、添加传感器、设置任务；文字任务传入外部 AI Agent。两条操作路径均连接到 OceanStudio 平台。'
+      summary: '真实 OceanStudio 实录展示机器人选择、传感器配置和任务设置。右侧示意文字任务传入 Codex、Claude Code、OpenCode、DeepSeek Harness 等外部 AI Agent，也支持其他 Agent。两条路径均连接到 OceanStudio 平台。'
     }
   };
   let language = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
@@ -38,8 +38,6 @@
   let lastTime = null;
   let frame = 0;
   let lastTyped = '';
-  let browserWidth = 0;
-  let browserHeight = 0;
   const duration = 13000;
   const routes = ['visual', 'agent'].map(name => ({
     name,
@@ -49,13 +47,11 @@
     halo: section.querySelector(`[data-halo="${name}"]`),
     length: 0
   }));
-  // Coordinates are percentages of the illustrated browser, not real controls.
-  const cursorKeys = [
-    [0, 62, 63], [450, 62, 63], [950, 15, 32], [1450, 15, 32],
-    [2200, 15, 49], [2850, 15, 49], [3650, 15, 66], [4250, 15, 66],
-    [4950, 78, 90], [5600, 78, 90], [6200, 86, 94], [duration, 86, 94]
-  ];
-  const clicks = [1150, 2500, 3950, 5300];
+  const clips = ['vehicles', 'sensors', 'missions'];
+  let clipIndex = 0;
+  let videoStarted = false;
+  let mp4Fallback = false;
+  let playPending = false;
 
   function updateCopy() {
     const text = words[language];
@@ -63,6 +59,8 @@
     section.querySelectorAll('[data-workspace-copy]').forEach(el => {
       el.textContent = text[el.dataset.workspaceCopy];
     });
+    section.querySelectorAll('[data-workspace-title]').forEach(el => { el.title = text[el.dataset.workspaceTitle]; });
+    video.setAttribute('aria-label', text.recording);
     toggle.setAttribute('aria-label', paused ? text.play : text.pause);
     toggle.title = paused ? text.play : text.pause;
     toggle.dataset.paused = String(paused);
@@ -73,18 +71,6 @@
   function layout() {
     const bounds = diagram.getBoundingClientRect();
     const target = sink.getBoundingClientRect();
-    const surface = browser.getBoundingClientRect();
-    browserWidth = surface.width;
-    browserHeight = surface.height;
-    const targets = [...section.querySelectorAll('[data-demo-option]'), section.querySelector('.demo-run')];
-    targets.forEach((el, index) => {
-      const rect = el.getBoundingClientRect();
-      const x = (rect.left + rect.width / 2 - surface.left) / surface.width * 100;
-      const y = (rect.top + rect.height / 2 - surface.top) / surface.height * 100;
-      for (const key of [cursorKeys[index * 2 + 2], cursorKeys[index * 2 + 3]]) {
-        key[1] = x; key[2] = y;
-      }
-    });
     svg.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
     const narrow = matchMedia('(max-width: 760px)').matches;
     for (const route of routes) {
@@ -120,26 +106,6 @@
   }
 
   function render(t) {
-    browser.classList.toggle('has-sensor', t >= 2500);
-    browser.classList.toggle('has-task', t >= 3950);
-    browser.classList.toggle('is-submitted', t >= 5300);
-    const selection = t < 2500 ? 'robot' : t < 3950 ? 'sensor' : 'task';
-    section.querySelectorAll('[data-demo-option]').forEach(el => {
-      el.classList.toggle('is-selected', el.dataset.demoOption === selection);
-    });
-    let i = cursorKeys.findIndex(key => key[0] > t);
-    if (i < 1) i = cursorKeys.length - 1;
-    const a = cursorKeys[i - 1], b = cursorKeys[i];
-    const fraction = Math.max(0, Math.min(1, (t - a[0]) / (b[0] - a[0])));
-    const ease = fraction * fraction * (3 - 2 * fraction);
-    const x = (a[1] + (b[1] - a[1]) * ease) * browserWidth / 100;
-    const y = (a[2] + (b[2] - a[2]) * ease) * browserHeight / 100;
-    cursor.style.transform = `translate(${x}px,${y}px)`;
-    cursor.style.opacity = t < 6200 ? '1' : '0';
-    const hit = clicks.find(time => t >= time && t < time + 520);
-    const ripple = hit === undefined ? 1 : (t - hit) / 520;
-    click.style.transform = `translate(${x - 20}px,${y - 20}px) scale(${.3 + ripple})`;
-    click.style.opacity = hit === undefined ? '0' : String(.8 * (1 - ripple));
     const count = Math.floor(Math.max(0, Math.min(1, (t - 450) / 4250)) * prompt.length);
     const content = prompt.slice(0, count).join('');
     if (content !== lastTyped) { typed.textContent = content; lastTyped = content; }
@@ -164,7 +130,39 @@
     render(elapsed);
     frame = requestAnimationFrame(tick);
   }
+  function playRecording() {
+    if (!permitted() || playPending || !video.paused) return;
+    playPending = true;
+    video.play().then(() => { if (!permitted()) video.pause(); }).catch(() => {
+      // Playback remains user-controlled by the shared play button.
+    }).finally(() => { playPending = false; });
+  }
+  function loadClip() {
+    const id = clips[clipIndex];
+    const format = !mp4Fallback && video.canPlayType('video/webm') ? 'webm' : 'mp4';
+    videoStarted = true;
+    video.dataset.clip = id;
+    video.src = `assets/media/capabilities/${id}.${format}`;
+    fallback.href = `assets/media/capabilities/${id}.mp4`;
+    video.load();
+    playRecording();
+  }
+  video.addEventListener('ended', () => {
+    clipIndex = (clipIndex + 1) % clips.length;
+    mp4Fallback = false;
+    loadClip();
+  });
+  video.addEventListener('error', () => {
+    if (!mp4Fallback && video.src.endsWith('.webm')) {
+      mp4Fallback = true; loadClip();
+    } else fallback.hidden = false;
+  });
+  video.addEventListener('canplay', playRecording);
   function sync() {
+    if (permitted()) {
+      if (!videoStarted) loadClip();
+      else playRecording();
+    } else video.pause();
     if (permitted() && !frame) { lastTime = null; frame = requestAnimationFrame(tick); }
     else if (!permitted()) { cancelAnimationFrame(frame); frame = 0; lastTime = null; }
   }
@@ -186,12 +184,14 @@
   mainVideo?.addEventListener('play', sync);
   mainVideo?.addEventListener('pause', sync);
   if (dialog) new MutationObserver(sync).observe(dialog, { attributes: true, attributeFilter: ['open'] });
+  video.controls = false;
+  video.loop = false;
   section.classList.add('workspace-enhanced');
   toggle.hidden = false;
   updateCopy(); layout();
   if ('ResizeObserver' in window) {
     const resize = new ResizeObserver(layout);
-    resize.observe(diagram); resize.observe(browser); resize.observe(sink);
+    resize.observe(diagram); resize.observe(recording); resize.observe(sink);
   } else window.addEventListener('resize', layout);
   document.fonts?.ready.then(layout);
   if ('IntersectionObserver' in window) {
