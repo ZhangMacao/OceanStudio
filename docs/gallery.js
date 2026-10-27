@@ -80,11 +80,22 @@
   function translateDialog() {
     const text = labels[language];
     document.getElementById('clip-dialog-title').textContent = opened.title[language];
+    dialogVideo.setAttribute('aria-label', opened.title[language]);
+    const cinematic = opened.kind === 'cinematic';
+    ['clip-dialog-meta', 'clip-dialog-description', 'clip-dialog-scope'].forEach(id => {
+      const element = document.getElementById(id);
+      element.hidden = cinematic;
+      if (cinematic) element.textContent = '';
+    });
+    if (cinematic) {
+      dialog.removeAttribute('aria-describedby');
+      return;
+    }
+    dialog.setAttribute('aria-describedby', 'clip-dialog-meta clip-dialog-description clip-dialog-scope');
     document.getElementById('clip-dialog-meta').textContent = `${text[opened.kind]} · ${Math.round(opened.duration)}${text.seconds}` +
       (opened.playback_rate > 1 ? ` · ${opened.playback_rate}× ${text.speed}` : '');
     document.getElementById('clip-dialog-description').textContent = opened.description[language];
     document.getElementById('clip-dialog-scope').textContent = opened.scope[language];
-    dialogVideo.setAttribute('aria-label', opened.title[language]);
   }
 
   function pausePreviews() {
