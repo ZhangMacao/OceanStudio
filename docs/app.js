@@ -71,7 +71,7 @@
   }
   document.querySelectorAll('[data-time]').forEach(button=>button.addEventListener('click',()=>seekTo(Number(button.dataset.time))));
   document.getElementById('watch-demo').addEventListener('click',()=>seekTo(video.currentTime||0));
-  document.getElementById('watch-loop').addEventListener('click',()=>seekTo(93.5));
+  document.getElementById('watch-loop')?.addEventListener('click',()=>seekTo(93.5));
   video.addEventListener('error',()=>{message.textContent=copy[language].videoError;});
   const chapters=[...document.querySelectorAll('[data-time]')];
   video.addEventListener('timeupdate',()=>{
