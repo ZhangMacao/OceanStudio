@@ -50,18 +50,25 @@ local agent icons. Its animation is illustrative; the dock recordings below it
 are separate real native runs. There is no live agent or simulator connection in
 this static website.
 
-A yellow native TorpedoAUV approaches a size-matched hollow funnel with one
-central green emissive beacon and one real UE spot light. The station light is
-cooked with UE 5.3.2 into an isolated Linux content package. The existing terrain
-is referenced as a streamed level; its original world package and the formal
-service are unchanged. Station, initial state, Fossen model, fixed head-current,
-clock, duration and independent acceptance conditions stay fixed across the
-published variants. The LOS/controller revisions operate on native COM truth;
-the optical marker is a visual cue, not a claimed RGB-based estimator.
+A yellow native TorpedoAUV approaches the original open funnel cage and its
+support frame, scaled down to 75% while preserving the AUV size. Only the center
+has an optical beacon. The station is cooked with UE 5.3.2 into an isolated Linux content
+package. Existing terrain is streamed without modifying its package or the
+formal service. Station, initial state, Fossen model, fixed current, clock,
+duration and acceptance conditions stay fixed across the published variants.
+The three stages deliberately contrast backward drift under fixed low thrust,
+an imprecise approach with heading/speed feedback, and successful terminal LOS
+control. Their measured final errors are 49.35785, 2.77960 and 0.01462 m;
+the last stage holds for 16.20 s. Navigation uses native COM truth; the optical
+marker is a visual cue, not an RGB-based estimator.
 
 Tabs choose a recorded candidate, its measured outcome, scalar metrics and a
-position-error plot. Recorded videos play at 2×; the plot playhead maps back to
-experiment time. Language changes preserve playback and the selected round.
+position-error plot with a shared logarithmic scale. The evidence panel shows
+forward progress, final position error and continuous hold. Redundant fixed-task
+copy, visible acceptance criteria and the experiment-details link have been
+removed; recording methods remain in the media notice. Recorded videos play at
+2×; the plot playhead maps back to experiment time. Language changes preserve
+playback and the selected round.
 Native controls, a shared research pause button, offscreen/hidden-tab suspension,
 main-film/modal suspension, keyboard tabs and reduced-motion preferences are
 supported. Without JavaScript, the first MP4 retains native controls. Only

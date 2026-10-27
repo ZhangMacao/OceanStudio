@@ -14,24 +14,22 @@
   const copy = {
     en: {
       loopLabel:'A goal passes to an agent, experiment setup, simulation, evaluation, and back to the agent.',
-      goalLabel:'Describe your goal',goal:'Dock the AUV. Keep the task and current fixed.',analysis:'Analyze & improve',analysisCopy:'Evaluate · Compare · Revise',setup:'Experiment setup',vehicle:'Vehicle',task:'Task',docking:'Funnel docking',design:'Design',algorithms:'Guidance & control',run:'Run simulation',
-      caseTitle:'One docking task. Three iterations.',fixed:'Same yellow AUV · Same dock · Same steady current',trialsLabel:'Docking experiment iterations',
-      trial0:'Establish a baseline',trial1:'Add compensation',trial2:'Coordinate the feedback',notMet:'Not met',passed:'Docked & stable',
-      agentRevision:'Agent revision',revision0:'LOS guidance with proportional speed control.',revision1:'Refine alignment and the terminal speed profile.',revision2:'Add model-based compensation and active braking.',
-      next0:'Inspect the trajectory and residual error to choose the next revision.',next1:'Use the remaining position and speed error to revise terminal control.',next2:'Retain the successful candidate and its original experiment record.',
-      finalError:'Final position error',finalSpeed:'Final speed',stableHold:'Continuous stable hold',positionError:'Position error · log scale',chartLabel:'Position error versus experiment time, on a logarithmic scale',
-      criterion:'Success: within 0.15 m, below 0.10 m/s, aligned within 5°, for 3 seconds.',method:'Experiment details ↗',rate:'Native UE · 2× playback',openVideo:'Open video',pause:'Pause animation & previews',resume:'Play animation & previews',
+      goalLabel:'Describe your goal',goal:'Guide the AUV into the docking cage.',analysis:'Analyze & improve',analysisCopy:'Evaluate · Compare · Revise',setup:'Experiment setup',vehicle:'Vehicle',task:'Task',docking:'Cage docking',design:'Design',algorithms:'Guidance & control',run:'Run simulation',
+      caseTitle:'From drift to precise docking.',trialsLabel:'Docking experiment iterations',
+      trial0:'Drifts off course',trial1:'Imprecise approach',trial2:'Successful docking',notMet:'Not met',passed:'Docked & stable',
+      agentRevision:'Agent revision',revision0:'Fixed thrust without feedback.',revision1:'Heading and speed feedback, without terminal correction.',revision2:'Current-compensated LOS and closed-loop docking control.',
+      finalError:'Final position error',progress:'Forward progress',stableHold:'Continuous stable hold',positionError:'Position error · log scale',chartLabel:'Position error versus experiment time, on a logarithmic scale',
+      rate:'Native UE · 2× playback',openVideo:'Open video',pause:'Pause animation & previews',resume:'Play animation & previews',
       videoLabel:'Yellow torpedo AUV docking experiment',
     },
     zh: {
       loopLabel:'目标交给 Agent，配置实验、运行仿真、评估结果，再反馈给 Agent 修改方案。',
-      goalLabel:'描述研究目标',goal:'让 AUV 完成对接。固定任务与水流，持续优化方案。',analysis:'Agent 分析与优化',analysisCopy:'评估 · 对比 · 修订',setup:'配置实验',vehicle:'机器人',task:'任务',docking:'喇叭坞站对接',design:'算法',algorithms:'引导与动力学控制',run:'运行仿真',
-      caseTitle:'同一个对接任务，逐轮改进。',fixed:'同一黄色 AUV · 同一坞站 · 同一恒定水流',trialsLabel:'对接实验迭代',
-      trial0:'建立基线',trial1:'加入抗扰与制动',trial2:'反馈协同调优',notMet:'未达标',passed:'对接并稳定',
-      agentRevision:'Agent 修改方案',revision0:'LOS 引导，配合比例航速控制。',revision1:'优化对准策略与末段减速曲线。',revision2:'加入模型补偿与主动制动。',
-      next0:'检查轨迹与残余误差，决定下一轮修改。',next1:'根据剩余的位置与速度误差，修订末段控制。',next2:'保留通过验收的候选方案及原始实验记录。',
-      finalError:'最终位置误差',finalSpeed:'最终速度',stableHold:'连续稳定保持',positionError:'位置误差 · 对数尺度',chartLabel:'位置误差随实验时间变化，对数纵轴',
-      criterion:'成功判据：误差 ≤ 0.15 m、速度 ≤ 0.10 m/s、航向误差 ≤ 5°，持续 3 秒。',method:'实验详情 ↗',rate:'原生 UE · 2 倍速',openVideo:'直接播放视频',pause:'暂停动画与预览',resume:'播放动画与预览',
+      goalLabel:'描述研究目标',goal:'让 AUV 精准进入对接笼。',analysis:'Agent 分析与优化',analysisCopy:'评估 · 对比 · 修订',setup:'配置实验',vehicle:'机器人',task:'任务',docking:'对接笼进近',design:'算法',algorithms:'引导与动力学控制',run:'运行仿真',
+      caseTitle:'从漂移失控，到精准对接。',trialsLabel:'对接实验迭代',
+      trial0:'漂移失控',trial1:'进近偏差',trial2:'精准对接',notMet:'未达标',passed:'对接并稳定',
+      agentRevision:'Agent 修改方案',revision0:'无反馈固定推力。',revision1:'航向与航速反馈，尚无末段精确修正。',revision2:'水流补偿 LOS 与闭环对接控制。',
+      finalError:'最终位置误差',progress:'前进距离',stableHold:'连续稳定保持',positionError:'位置误差 · 对数尺度',chartLabel:'位置误差随实验时间变化，对数纵轴',
+      rate:'原生 UE · 2 倍速',openVideo:'直接播放视频',pause:'暂停动画与预览',resume:'播放动画与预览',
       videoLabel:'黄色鱼雷形 AUV 坞站对接实验',
     },
   };
@@ -61,17 +59,15 @@
     verdict.textContent = trial.verdict === 'passed' ? c.passed : c.notMet;
     verdict.dataset.verdict = trial.verdict;
     document.getElementById('docking-revision').textContent = trial.revision?.[language] || c['revision' + selected];
-    document.getElementById('docking-next').textContent = trial.analysis?.[language] || c['next' + selected];
     document.getElementById('docking-error').textContent = trial.final_position_error_m.toFixed(3) + ' m';
-    document.getElementById('docking-speed').textContent = trial.final_speed_mps.toFixed(3) + ' m/s';
+    document.getElementById('docking-progress').textContent = trial.forward_progress_m.toFixed(2) + ' m';
     document.getElementById('docking-hold').textContent = trial.max_continuous_hold_s.toFixed(2) + ' s';
     tabs.forEach((tab, i) => { tab.querySelector('em').textContent = study.trials[i].verdict === 'passed' ? c.passed : c.notMet; });
     const duration = study.duration_s;
-    const y = value => 12 + (Math.log10(20) - Math.log10(Math.max(.005, value))) / (Math.log10(20) - Math.log10(.005)) * 110;
+    const upper = Math.max(20, ...study.trials.flatMap(t => t.error_curve.map(point => point[1]))) * 1.05;
+    const y = value => 12 + (Math.log10(upper) - Math.log10(Math.max(.005, value))) / (Math.log10(upper) - Math.log10(.005)) * 110;
     const points = trial.error_curve.map(([t, e]) => [(28 + t / duration * 362), y(e)]);
     document.getElementById('docking-curve').setAttribute('d', points.map(([x, yy], i) => (i ? 'L' : 'M') + x.toFixed(2) + ' ' + yy.toFixed(2)).join(''));
-    const threshold = y(study.criteria.position_m);
-    document.getElementById('docking-threshold').setAttribute('d', `M28 ${threshold}H390`);
     document.querySelector('#docking-chart text:last-child').textContent = duration + ' s';
     playhead();
   }
@@ -92,8 +88,8 @@
     document.getElementById('docking-panel').setAttribute('aria-labelledby', tabs[selected].id);
     const id = 'round-0' + (selected + 1);
     pauseVideo(); changing = true; sourceFallback = false;
-    video.poster = `assets/images/docking/${id}.jpg`;
-    video.src = `assets/media/docking/${id}.mp4`;
+    video.poster = `assets/images/docking/${id}.jpg?v=20261027-compact`;
+    video.src = `assets/media/docking/${id}.mp4?v=20261027-compact`;
     document.getElementById('docking-fallback').href = video.src;
     document.getElementById('docking-fallback').hidden = true;
     video.load(); loaded = true; renderEvidence();
@@ -196,6 +192,6 @@
   if (clipDialog) new MutationObserver(synchronize).observe(clipDialog,{attributes:true,attributeFilter:['open']});
   reduced.addEventListener('change', () => { stopped=reduced.matches;labelMotion();synchronize(); });
   document.addEventListener('oceanstudio:language', event => { language = event.detail.language; translate(); });
-  fetch('assets/media/docking/study.json?v=20261027-torpedo').then(r => {if(!r.ok)throw Error('study unavailable');return r.json();}).then(data => {study=data;renderEvidence();}).catch(() => {});
+  fetch('assets/media/docking/study.json?v=20261027-compact').then(r => {if(!r.ok)throw Error('study unavailable');return r.json();}).then(data => {study=data;renderEvidence();}).catch(() => {});
   translate(); connect();
 })();
