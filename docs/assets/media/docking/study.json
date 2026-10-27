@@ -551,7 +551,9 @@
       "analysis": {
         "en": "Speed settles, but position stays outside the acceptance band.",
         "zh": "速度已降低，但位置仍超出验收范围。"
-      }
+      },
+      "evaluation_version": "consecutive-sample-intervals/v2",
+      "interval_evaluator_sha256": "54aa872abe3358374b0584dad4e0fe11dab5aaba67cb6fd507687aacb22c9eef"
     },
     {
       "verdict": "not_met",
@@ -1075,15 +1077,17 @@
       "analysis": {
         "en": "Coupled saturation freezes the speed integral. Preserve this failed candidate.",
         "zh": "耦合限幅冻结了航速积分，残余误差变大；保留这轮失败记录。"
-      }
+      },
+      "evaluation_version": "consecutive-sample-intervals/v2",
+      "interval_evaluator_sha256": "54aa872abe3358374b0584dad4e0fe11dab5aaba67cb6fd507687aacb22c9eef"
     },
     {
       "verdict": "passed",
       "final_position_error_m": 0.12007523920278743,
       "final_speed_mps": 0.0037169457339232847,
       "final_heading_error_deg": 3.4808313832602464,
-      "max_continuous_hold_s": 15.02,
-      "time_to_success_s": 47.98,
+      "max_continuous_hold_s": 15.0,
+      "time_to_success_s": 48.0,
       "frames": 3001,
       "clock_verified": true,
       "observed_dt_median_s": 0.02000000001210441,
@@ -1599,7 +1603,9 @@
       "analysis": {
         "en": "The same fixed task now passes. Retain the candidate and its evidence.",
         "zh": "同一固定任务通过验收，保留该候选方案与验证证据。"
-      }
+      },
+      "evaluation_version": "consecutive-sample-intervals/v2",
+      "interval_evaluator_sha256": "54aa872abe3358374b0584dad4e0fe11dab5aaba67cb6fd507687aacb22c9eef"
     }
   ]
 }

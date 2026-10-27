@@ -26,16 +26,19 @@ reads 3,001 saved native state samples and checks completeness and the measured
 velocity/acceleration time step. A successful interval requires the AUV to be
 inside the funnel, within 0.15 m of the fixed target, below 0.10 m/s, and within
 5 degrees of the dock heading for at least three continuous seconds. The criteria
-and environment are frozen before the final comparison.
+and environment are frozen before the final comparison. Hold duration counts
+intervals between consecutive qualifying samples; the first sample contributes
+zero elapsed time. Original reports are retained alongside this conservative
+interval audit.
 
 | Recording | Revision | Final position error | Final speed | Continuous hold | Verdict |
 | --- | --- | --- | --- | --- | --- |
 | 01 | LOS + proportional speed | 0.16687 m | 0.00114 m/s | 0 s | Not met |
 | 02 | Model compensation + reversible braking | 0.34304 m | 0.00290 m/s | 0 s | Not met |
-| 03 | Decoupled anti-windup, damped/integral guidance | 0.12008 m | 0.00372 m/s | 15.02 s | Passed |
+| 03 | Decoupled anti-windup, damped/integral guidance | 0.12008 m | 0.00372 m/s | 15.00 s | Passed |
 
 The second candidate is worse than the baseline; it is retained. For candidate
-03, the first accepted three-second window ends at 47.98 s and the final heading
+03, the first accepted three-second window ends at 48.00 s and the final heading
 error is 3.48083 degrees. All three native engines exited normally. The current
 study uses native COM truth for LOS navigation and control. The central optical
 marker is a scene cue; the controller does not estimate pose from RGB images.
