@@ -805,6 +805,46 @@
       "raw_rgb_stream_sha256": "5513acc76e5f855b791f14bc04649f57dd40e90df7c045f41c2a520bb07e82f7",
       "max_native_pose_error_m": 1.1206740539710458e-05,
       "native_engine_stopped": true
+    },
+    {
+      "id": "scene-reel",
+      "group": "cinematic",
+      "kind": "cinematic",
+      "title": {
+        "en": "Support for diverse experiments",
+        "zh": "兼容多种任务实验"
+      },
+      "description": {
+        "en": "Continuous native UE footage of underwater surveying, canyon traversal, inspection and staged robot formations.",
+        "zh": "连续展示水下巡航、海谷穿越、巡检与预设机器人编队的 UE 原生画面。"
+      },
+      "scope": {
+        "en": "UE scene demonstration with prescribed vehicle poses and camera choreography. This is not a closed-loop controller, autonomous planning or collision-avoidance result.",
+        "zh": "UE 场景展示，使用预设载体位姿和相机运镜；不作为闭环控制、自主规划或自主避障的验收结果。"
+      },
+      "video": "assets/media/scenes/scene-reel.mp4",
+      "preview_video": "assets/media/scenes/scene-reel.webm",
+      "poster": "assets/images/scenes/scene-reel.jpg",
+      "duration": 40.0,
+      "width": 2560,
+      "height": 1440,
+      "preview_width": 1920,
+      "preview_height": 1080,
+      "fps": 30,
+      "frames": 1200,
+      "playback_rate": 1.0,
+      "sha256": "80ba466b3d83c867261053aab3a3d2c64f633b467ae2ce4b31e43aef1167b308",
+      "preview_sha256": "98ec9a12bc53a681b21c386c39494ead5d4f601ecf3ea896bc55b5e6a0697a6a",
+      "capture": "Stream-copy concatenation of four native UE recordings; original resolution/frame rate retained",
+      "scene_package": "TrenchReefScenes 1.0.0",
+      "capture_date": "2026-10-27",
+      "native_engine_stopped": true,
+      "sources": [
+        "reef-survey",
+        "canyon-descent",
+        "wreck-inspection",
+        "fleet-traverse"
+      ]
     }
   ]
 }
