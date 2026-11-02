@@ -4,6 +4,7 @@
   if (!section) return;
   const video = document.getElementById('docking-video');
   const motion = document.getElementById('research-motion');
+  const attitudeVideo = document.getElementById('attitude-video');
   const diagram = section.querySelector('.autoresearch-loop');
   const paths = [...section.querySelectorAll('[data-research-flow]')];
   const packets = [...section.querySelectorAll('[data-research-packet]')];
@@ -14,7 +15,7 @@
   const copy = {
     en: {
       loopLabel:'A goal passes to an agent, experiment setup, simulation, evaluation, and back to the agent.',
-      goalLabel:'Describe your goal',goal:'Guide the AUV into the docking cage.',analysis:'Analyze & improve',analysisCopy:'Evaluate · Compare · Revise',setup:'Experiment setup',vehicle:'Vehicle',task:'Task',docking:'Cage docking',design:'Design',algorithms:'Guidance & control',run:'Run simulation',
+      goalLabel:'Describe your goal',goal:'Refine underwater control through experiments.',analysis:'Analyze & improve',analysisCopy:'Evaluate · Compare · Revise',setup:'Experiment setup',vehicle:'Vehicle',task:'Task',docking:'Attitude hold · Docking',design:'Design',algorithms:'Guidance & control',run:'Run simulation',
       caseTitle:'From lateral drift to precise docking.',trialsLabel:'Docking experiment iterations',
       trial0:'Lateral drift',trial1:'Imprecise approach',trial2:'Successful docking',notMet:'Not met',passed:'Docked & stable',
       agentRevision:'Agent revision',revision0:'Forward approach without lateral correction.',revision1:'Heading and speed feedback, without terminal correction.',revision2:'Current-compensated LOS and closed-loop docking control.',
@@ -24,7 +25,7 @@
     },
     zh: {
       loopLabel:'目标交给 Agent，配置实验、运行仿真、评估结果，再反馈给 Agent 修改方案。',
-      goalLabel:'描述研究目标',goal:'让 AUV 精准进入对接笼。',analysis:'Agent 分析与优化',analysisCopy:'评估 · 对比 · 修订',setup:'配置实验',vehicle:'机器人',task:'任务',docking:'对接笼进近',design:'算法',algorithms:'引导与动力学控制',run:'运行仿真',
+      goalLabel:'描述研究目标',goal:'通过多轮实验改进水下控制。',analysis:'Agent 分析与优化',analysisCopy:'评估 · 对比 · 修订',setup:'配置实验',vehicle:'机器人',task:'任务',docking:'姿态稳定 · 坞站对接',design:'算法',algorithms:'引导与动力学控制',run:'运行仿真',
       caseTitle:'从横向漂移，到精准对接。',trialsLabel:'对接实验迭代',
       trial0:'横向漂移',trial1:'进近偏差',trial2:'精准对接',notMet:'未达标',passed:'对接并稳定',
       agentRevision:'Agent 修改方案',revision0:'稳定前进与定深，缺少横向修正。',revision1:'航向与航速反馈，尚无末段精确修正。',revision2:'水流补偿 LOS 与闭环对接控制。',
@@ -37,7 +38,7 @@
   let selected = 0, study, visible = false, diagramVisible = false;
   let stopped = reduced.matches, clock = 0, last = 0, raf = 0, loaded = false;
   let ignorePauseUntil = 0, changing = false, sourceFallback = false;
-  const eligible = () => !stopped && !document.hidden && !clipDialog?.open && (mainFilm?.paused ?? true);
+  const eligible = () => !stopped && (attitudeVideo?.paused ?? true) && !document.hidden && !clipDialog?.open && (mainFilm?.paused ?? true);
   function labelMotion() {
     motion.setAttribute('aria-pressed', String(stopped));
     motion.setAttribute('aria-label', copy[language][stopped ? 'resume' : 'pause']);
@@ -79,6 +80,7 @@
   }
   function pauseVideo() { ignorePauseUntil = performance.now() + 300; video.pause(); }
   function choose(index, focus = false) {
+    document.dispatchEvent(new CustomEvent('oceanstudio:study-focus',{detail:{id:'docking'}}));
     selected = (index + tabs.length) % tabs.length;
     tabs.forEach((tab, i) => {
       tab.setAttribute('aria-selected', String(i === selected));
@@ -112,6 +114,7 @@
     if (!changing && !video.ended && visible && eligible() && performance.now() > ignorePauseUntil) { stopped = true; labelMotion(); synchronize(); }
   });
   video.addEventListener('play', () => {
+    document.dispatchEvent(new CustomEvent('oceanstudio:study-focus',{detail:{id:'docking'}}));
     if (stopped && visible) { stopped = false; labelMotion(); synchronize(); }
   });
   video.addEventListener('error', () => {
@@ -189,6 +192,8 @@
   new ResizeObserver(connect).observe(diagram);
   document.fonts.ready.then(connect);
   document.addEventListener('visibilitychange', synchronize);
+  document.addEventListener('oceanstudio:study-focus', event => { if(event.detail.id==='attitude')pauseVideo(); });
+  attitudeVideo?.addEventListener('play', synchronize); attitudeVideo?.addEventListener('pause', synchronize);
   mainFilm?.addEventListener('play', synchronize); mainFilm?.addEventListener('pause', synchronize);
   if (clipDialog) new MutationObserver(synchronize).observe(clipDialog,{attributes:true,attributeFilter:['open']});
   reduced.addEventListener('change', () => { stopped=reduced.matches;labelMotion();synchronize(); });

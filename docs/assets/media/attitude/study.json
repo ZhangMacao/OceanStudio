@@ -1,0 +1,929 @@
+{
+  "id": "rov-imu-attitude-v2",
+  "optimizer_agent": "Codex",
+  "source_commit": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
+  "duration_s": 30,
+  "playback_rate": 2,
+  "physics_hz": 50,
+  "settle_s": 5,
+  "criteria": {
+    "rms_deg": 2.0,
+    "p95_deg": 3.0,
+    "rate_rms_deg_s": 8.0,
+    "band_deg": 3.0,
+    "rate_band_deg_s": 10.0,
+    "hold_s": 5.0
+  },
+  "engine_fixed_seed": true,
+  "nominal_controller_accel_limit": 1.8,
+  "study_sha256": "20f56a4245d4512005943be53482cbb6ec76631c3b926fbcfb6cdbf019c4c8f9",
+  "input_study_sha256": "2f039bcf1bbc6f897f781fdb0e58df8585223a22be9d308652fbba426369074d",
+  "render_scope": "Native UE re-render from independently verified measured closed-loop poses after a camera-angle change. Controller results come from the original force-integrated runs.",
+  "plugin_sha256": "500c7a4fcedba21ca17f1981c33dec72ca977eefc6bb34adf86841b9f282700b",
+  "feedback_scope": "Native IMUSensor acceleration/gyro drive attitude estimation and control. Identical truth-aided translation support is used in all variants; not IMU-only localization. Current and bounded multisine wrench are reference disturbances, not CFD turbulence.",
+  "trials": [
+    {
+      "complete": true,
+      "clock_verified": true,
+      "observed_dt_median_s": 0.019999999753262415,
+      "frames": 1501,
+      "verdict": "not_met",
+      "tilt_rms_deg": 8.723537107629282,
+      "tilt_p95_deg": 13.699112041861035,
+      "rate_rms_deg_s": 7.389700708192321,
+      "stable_hold_s": 1.26,
+      "estimator_rmse_deg": 0.023763057598375617,
+      "telemetry_sha256": "955272a003271980241d1ae1f0c2ffb6303a1e343a62b084591ef6c94570bb3a",
+      "study_sha256": "20f56a4245d4512005943be53482cbb6ec76631c3b926fbcfb6cdbf019c4c8f9",
+      "evaluator_sha256": "683ba884dc99b15fb089b425e4468f4ca7e8d179b8a6472bb06d8d0de00bbeaa",
+      "id": "final-01",
+      "revision": {
+        "en": "PID with measured-rate damping.",
+        "zh": "PID 与角速度阻尼。"
+      },
+      "tilt_curve": [
+        [
+          0.0,
+          0.0011
+        ],
+        [
+          0.5,
+          0.1519
+        ],
+        [
+          1.0,
+          1.2752
+        ],
+        [
+          1.5,
+          3.3709
+        ],
+        [
+          2.0,
+          5.2372
+        ],
+        [
+          2.5,
+          7.0696
+        ],
+        [
+          3.0,
+          8.7691
+        ],
+        [
+          3.5,
+          8.5822
+        ],
+        [
+          4.0,
+          7.2378
+        ],
+        [
+          4.5,
+          8.1308
+        ],
+        [
+          5.0,
+          9.4435
+        ],
+        [
+          5.5,
+          10.6548
+        ],
+        [
+          6.0,
+          11.7422
+        ],
+        [
+          6.5,
+          10.5357
+        ],
+        [
+          7.0,
+          7.9291
+        ],
+        [
+          7.5,
+          6.818
+        ],
+        [
+          8.0,
+          7.9181
+        ],
+        [
+          8.5,
+          8.4512
+        ],
+        [
+          9.0,
+          5.6978
+        ],
+        [
+          9.5,
+          2.2189
+        ],
+        [
+          10.0,
+          2.5214
+        ],
+        [
+          10.5,
+          5.2989
+        ],
+        [
+          11.0,
+          10.8426
+        ],
+        [
+          11.5,
+          14.0046
+        ],
+        [
+          12.0,
+          12.7183
+        ],
+        [
+          12.5,
+          9.6212
+        ],
+        [
+          13.0,
+          8.8333
+        ],
+        [
+          13.5,
+          9.7025
+        ],
+        [
+          14.0,
+          8.1979
+        ],
+        [
+          14.5,
+          4.0676
+        ],
+        [
+          15.0,
+          1.3216
+        ],
+        [
+          15.5,
+          1.0338
+        ],
+        [
+          16.0,
+          3.9159
+        ],
+        [
+          16.5,
+          7.1359
+        ],
+        [
+          17.0,
+          9.3763
+        ],
+        [
+          17.5,
+          11.3753
+        ],
+        [
+          18.0,
+          12.8561
+        ],
+        [
+          18.5,
+          13.5837
+        ],
+        [
+          19.0,
+          12.437
+        ],
+        [
+          19.5,
+          8.2986
+        ],
+        [
+          20.0,
+          4.1811
+        ],
+        [
+          20.5,
+          2.9925
+        ],
+        [
+          21.0,
+          2.6765
+        ],
+        [
+          21.5,
+          5.0588
+        ],
+        [
+          22.0,
+          6.1908
+        ],
+        [
+          22.5,
+          5.3702
+        ],
+        [
+          23.0,
+          6.1786
+        ],
+        [
+          23.5,
+          10.7123
+        ],
+        [
+          24.0,
+          14.7301
+        ],
+        [
+          24.5,
+          14.1262
+        ],
+        [
+          25.0,
+          9.6806
+        ],
+        [
+          25.5,
+          6.0338
+        ],
+        [
+          26.0,
+          5.1082
+        ],
+        [
+          26.5,
+          6.3451
+        ],
+        [
+          27.0,
+          7.1307
+        ],
+        [
+          27.5,
+          5.3523
+        ],
+        [
+          28.0,
+          4.429
+        ],
+        [
+          28.5,
+          7.2778
+        ],
+        [
+          29.0,
+          10.7821
+        ],
+        [
+          29.5,
+          12.1142
+        ],
+        [
+          30.0,
+          11.0798
+        ]
+      ],
+      "parameters_sha256": "e9cfcaed4eae4dd14b07e387e6a8039889b29781044469da705080039c04d60c",
+      "video_sha256": "34b9cb400830031ba8d10107318a7c99d1252fb808f378a3fc6caf61dcb5d337",
+      "poster_sha256": "ffb10e41e765cf536608fc171e9c16b17ac84a52939e578537914a5adfaf6e7e",
+      "video_bytes": 7879662,
+      "video": {
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "25/1",
+        "duration": "15.040000",
+        "nb_read_frames": "376"
+      },
+      "native_video_sha256": "a7723d8617f9c55c4bc98219602f19b72dfcce3250d217d76e19bf67c3f47015",
+      "force_integrated_native_video_sha256": "537aa20f6de6325929c6b38d4003fc0a3896d74a0b94962f2f881bcabe617fc3",
+      "raw_rgb_sha256": "b590edd8e0ac7ad8b55376e4901631581c0d75814f813712cb9e8665e53f1bf4",
+      "max_translation_readback_error_m": 0.0,
+      "max_rotation_readback_error_deg": 0.016544023467696584,
+      "reference_marker": {
+        "target_position_ned_m": [
+          -145.0,
+          -110.0,
+          26.0
+        ],
+        "horizontal_reference_plane_offset_down_m": 0.38,
+        "ring_radius_m": 0.45,
+        "upper_handle_offset_down_m": -0.55,
+        "purpose": "Fixed display-only target point and level reference; no control or physics input"
+      },
+      "camera_offset_ned_m": [
+        -1.3,
+        -1.8,
+        -0.25
+      ],
+      "fov_deg": 40,
+      "poster_extraction_sha256": "76a74491149044bced0072ee8070b8881df339e686cb7afab13926f2de89de18",
+      "poster_origin": "Native UE re-render of OceanStudio measured closed-loop ROV attitude experiment final-01 at experiment time 25 seconds; closer canyon camera and fixed display-only hover reference. Source and method: assets/media/attitude/study.json and README.md. Not AI-generated."
+    },
+    {
+      "complete": true,
+      "clock_verified": true,
+      "observed_dt_median_s": 0.019999999912273213,
+      "frames": 1501,
+      "verdict": "not_met",
+      "tilt_rms_deg": 2.2066745512926778,
+      "tilt_p95_deg": 3.6807341243079725,
+      "rate_rms_deg_s": 1.481682793655587,
+      "stable_hold_s": 13.04,
+      "estimator_rmse_deg": 0.02721589756648827,
+      "telemetry_sha256": "e1bb51a269a8e154906bbdae0a7acc7e947eec4f270dbd7ad8e43fb1cfe1a052",
+      "study_sha256": "20f56a4245d4512005943be53482cbb6ec76631c3b926fbcfb6cdbf019c4c8f9",
+      "evaluator_sha256": "683ba884dc99b15fb089b425e4468f4ca7e8d179b8a6472bb06d8d0de00bbeaa",
+      "id": "final-02",
+      "revision": {
+        "en": "Add boundary-layer sliding-mode correction.",
+        "zh": "增加边界层滑模抗扰校正。"
+      },
+      "tilt_curve": [
+        [
+          0.0,
+          0.0021
+        ],
+        [
+          0.5,
+          0.0863
+        ],
+        [
+          1.0,
+          0.393
+        ],
+        [
+          1.5,
+          0.8036
+        ],
+        [
+          2.0,
+          1.1992
+        ],
+        [
+          2.5,
+          1.6294
+        ],
+        [
+          3.0,
+          1.9119
+        ],
+        [
+          3.5,
+          1.7697
+        ],
+        [
+          4.0,
+          1.523
+        ],
+        [
+          4.5,
+          1.6618
+        ],
+        [
+          5.0,
+          1.9276
+        ],
+        [
+          5.5,
+          2.1866
+        ],
+        [
+          6.0,
+          2.519
+        ],
+        [
+          6.5,
+          2.5392
+        ],
+        [
+          7.0,
+          2.1718
+        ],
+        [
+          7.5,
+          2.0879
+        ],
+        [
+          8.0,
+          2.1894
+        ],
+        [
+          8.5,
+          2.0347
+        ],
+        [
+          9.0,
+          1.4052
+        ],
+        [
+          9.5,
+          0.756
+        ],
+        [
+          10.0,
+          0.8086
+        ],
+        [
+          10.5,
+          1.4761
+        ],
+        [
+          11.0,
+          2.2999
+        ],
+        [
+          11.5,
+          2.7322
+        ],
+        [
+          12.0,
+          2.6401
+        ],
+        [
+          12.5,
+          2.4276
+        ],
+        [
+          13.0,
+          2.5829
+        ],
+        [
+          13.5,
+          2.8161
+        ],
+        [
+          14.0,
+          2.1535
+        ],
+        [
+          14.5,
+          1.2301
+        ],
+        [
+          15.0,
+          0.5455
+        ],
+        [
+          15.5,
+          0.5323
+        ],
+        [
+          16.0,
+          1.0749
+        ],
+        [
+          16.5,
+          1.6525
+        ],
+        [
+          17.0,
+          2.1171
+        ],
+        [
+          17.5,
+          2.5329
+        ],
+        [
+          18.0,
+          2.9525
+        ],
+        [
+          18.5,
+          3.5558
+        ],
+        [
+          19.0,
+          3.3121
+        ],
+        [
+          19.5,
+          2.1981
+        ],
+        [
+          20.0,
+          1.3143
+        ],
+        [
+          20.5,
+          0.9212
+        ],
+        [
+          21.0,
+          0.9231
+        ],
+        [
+          21.5,
+          1.2079
+        ],
+        [
+          22.0,
+          1.4012
+        ],
+        [
+          22.5,
+          1.4833
+        ],
+        [
+          23.0,
+          1.8859
+        ],
+        [
+          23.5,
+          2.9635
+        ],
+        [
+          24.0,
+          3.9771
+        ],
+        [
+          24.5,
+          3.3062
+        ],
+        [
+          25.0,
+          2.2463
+        ],
+        [
+          25.5,
+          1.6173
+        ],
+        [
+          26.0,
+          1.4887
+        ],
+        [
+          26.5,
+          1.5783
+        ],
+        [
+          27.0,
+          1.5251
+        ],
+        [
+          27.5,
+          1.294
+        ],
+        [
+          28.0,
+          1.3725
+        ],
+        [
+          28.5,
+          2.0549
+        ],
+        [
+          29.0,
+          3.3785
+        ],
+        [
+          29.5,
+          3.7302
+        ],
+        [
+          30.0,
+          2.8806
+        ]
+      ],
+      "parameters_sha256": "23501a72aeee02b840aea2ae956dffc57fadb04d8e18ea7343a98d6ffc0848bd",
+      "video_sha256": "a15b2cd011df60da474c0e9b4beb2b72b59b83c591c4dcefbf4bd976621c0bd0",
+      "poster_sha256": "1b93f280b3b43b0b5c5a7d201e88cc04aa7ed9d15be9fac321d34881cd7ca947",
+      "video_bytes": 7829001,
+      "video": {
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "25/1",
+        "duration": "15.040000",
+        "nb_read_frames": "376"
+      },
+      "native_video_sha256": "9f36d7480e799efa47349ddcce4d9473a12bf557a76ca01a4879abbf08108796",
+      "force_integrated_native_video_sha256": "af95ba9e32d12ed51199c6b008d59fe7000b64171024e2e86f792dabf3f151a1",
+      "raw_rgb_sha256": "7a84f9f957d87484f91c9f4ed3ee46b9941afc721346c99041a3b354cdf07c71",
+      "max_translation_readback_error_m": 0.0,
+      "max_rotation_readback_error_deg": 0.01610182185758404,
+      "reference_marker": {
+        "target_position_ned_m": [
+          -145.0,
+          -110.0,
+          26.0
+        ],
+        "horizontal_reference_plane_offset_down_m": 0.38,
+        "ring_radius_m": 0.45,
+        "upper_handle_offset_down_m": -0.55,
+        "purpose": "Fixed display-only target point and level reference; no control or physics input"
+      },
+      "camera_offset_ned_m": [
+        -1.3,
+        -1.8,
+        -0.25
+      ],
+      "fov_deg": 40,
+      "poster_extraction_sha256": "7eb825386d0a9852736d1be437a990fef3d7059239efdd6bcd55f443ee8ee86c",
+      "poster_origin": "Native UE re-render of OceanStudio measured closed-loop ROV attitude experiment final-02 at experiment time 25 seconds; closer canyon camera and fixed display-only hover reference. Source and method: assets/media/attitude/study.json and README.md. Not AI-generated."
+    },
+    {
+      "complete": true,
+      "clock_verified": true,
+      "observed_dt_median_s": 0.019999999612340964,
+      "frames": 1501,
+      "verdict": "passed",
+      "tilt_rms_deg": 0.3257084523584703,
+      "tilt_p95_deg": 0.51728630817835,
+      "rate_rms_deg_s": 0.5484811810252409,
+      "stable_hold_s": 25.0,
+      "estimator_rmse_deg": 0.02839771809134213,
+      "telemetry_sha256": "19f8828df4e8427d6ad93c0e7d185ef6488c7ddf4609d53c434f8a0c9b45889f",
+      "study_sha256": "20f56a4245d4512005943be53482cbb6ec76631c3b926fbcfb6cdbf019c4c8f9",
+      "evaluator_sha256": "683ba884dc99b15fb089b425e4468f4ca7e8d179b8a6472bb06d8d0de00bbeaa",
+      "id": "final-03",
+      "revision": {
+        "en": "Estimate and compensate angular disturbances.",
+        "zh": "观测并补偿角向扰动。"
+      },
+      "tilt_curve": [
+        [
+          0.0,
+          0.0025
+        ],
+        [
+          0.5,
+          0.0793
+        ],
+        [
+          1.0,
+          0.2474
+        ],
+        [
+          1.5,
+          0.3051
+        ],
+        [
+          2.0,
+          0.3007
+        ],
+        [
+          2.5,
+          0.2847
+        ],
+        [
+          3.0,
+          0.1543
+        ],
+        [
+          3.5,
+          0.2465
+        ],
+        [
+          4.0,
+          0.4307
+        ],
+        [
+          4.5,
+          0.2589
+        ],
+        [
+          5.0,
+          0.2255
+        ],
+        [
+          5.5,
+          0.4854
+        ],
+        [
+          6.0,
+          0.4591
+        ],
+        [
+          6.5,
+          0.3182
+        ],
+        [
+          7.0,
+          0.2025
+        ],
+        [
+          7.5,
+          0.0469
+        ],
+        [
+          8.0,
+          0.0641
+        ],
+        [
+          8.5,
+          0.1873
+        ],
+        [
+          9.0,
+          0.434
+        ],
+        [
+          9.5,
+          0.4119
+        ],
+        [
+          10.0,
+          0.2009
+        ],
+        [
+          10.5,
+          0.4194
+        ],
+        [
+          11.0,
+          0.4476
+        ],
+        [
+          11.5,
+          0.1789
+        ],
+        [
+          12.0,
+          0.1442
+        ],
+        [
+          12.5,
+          0.2581
+        ],
+        [
+          13.0,
+          0.2489
+        ],
+        [
+          13.5,
+          0.1266
+        ],
+        [
+          14.0,
+          0.3256
+        ],
+        [
+          14.5,
+          0.5175
+        ],
+        [
+          15.0,
+          0.35
+        ],
+        [
+          15.5,
+          0.1504
+        ],
+        [
+          16.0,
+          0.3422
+        ],
+        [
+          16.5,
+          0.3763
+        ],
+        [
+          17.0,
+          0.3759
+        ],
+        [
+          17.5,
+          0.2903
+        ],
+        [
+          18.0,
+          0.2357
+        ],
+        [
+          18.5,
+          0.2431
+        ],
+        [
+          19.0,
+          0.2792
+        ],
+        [
+          19.5,
+          0.5213
+        ],
+        [
+          20.0,
+          0.5212
+        ],
+        [
+          20.5,
+          0.2326
+        ],
+        [
+          21.0,
+          0.2664
+        ],
+        [
+          21.5,
+          0.3214
+        ],
+        [
+          22.0,
+          0.1376
+        ],
+        [
+          22.5,
+          0.1316
+        ],
+        [
+          23.0,
+          0.3662
+        ],
+        [
+          23.5,
+          0.4441
+        ],
+        [
+          24.0,
+          0.2114
+        ],
+        [
+          24.5,
+          0.2976
+        ],
+        [
+          25.0,
+          0.5242
+        ],
+        [
+          25.5,
+          0.3553
+        ],
+        [
+          26.0,
+          0.0971
+        ],
+        [
+          26.5,
+          0.176
+        ],
+        [
+          27.0,
+          0.1869
+        ],
+        [
+          27.5,
+          0.2683
+        ],
+        [
+          28.0,
+          0.2815
+        ],
+        [
+          28.5,
+          0.3636
+        ],
+        [
+          29.0,
+          0.3674
+        ],
+        [
+          29.5,
+          0.2963
+        ],
+        [
+          30.0,
+          0.4186
+        ]
+      ],
+      "parameters_sha256": "7d6909bc5dd78dd83d099ab379298ed233f6d8e8d5ba667735e23ddabff64250",
+      "video_sha256": "b3461e22a7d76c947deec6e5e844d8418d6efe53b01b5f6236a8c2d76f14651c",
+      "poster_sha256": "c2683a0f541b4efd3c12b734123e33cb7dd4167ac31a7ff6dcc0a7d53932e5fe",
+      "video_bytes": 7810381,
+      "video": {
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "25/1",
+        "duration": "15.040000",
+        "nb_read_frames": "376"
+      },
+      "native_video_sha256": "edb70d2f9effdaeb7ef67d3c1d0dea8698568cab1ec6b8ee30044dc8f27d12ce",
+      "force_integrated_native_video_sha256": "540ed0eba85db128b6c5e63e1e28b8f62cafce8c0d2049d579632f40768859fe",
+      "raw_rgb_sha256": "8226522a8e9ef6e9828091a0a5f8e5c860fb3186cc113cefba03f61cda4d01dc",
+      "max_translation_readback_error_m": 0.0,
+      "max_rotation_readback_error_deg": 0.016166245505333954,
+      "reference_marker": {
+        "target_position_ned_m": [
+          -145.0,
+          -110.0,
+          26.0
+        ],
+        "horizontal_reference_plane_offset_down_m": 0.38,
+        "ring_radius_m": 0.45,
+        "upper_handle_offset_down_m": -0.55,
+        "purpose": "Fixed display-only target point and level reference; no control or physics input"
+      },
+      "camera_offset_ned_m": [
+        -1.3,
+        -1.8,
+        -0.25
+      ],
+      "fov_deg": 40,
+      "poster_extraction_sha256": "daf31cf8d00bfcf69da5380539794dff2574c47580afdca0f501e42439bcf6b6",
+      "poster_origin": "Native UE re-render of OceanStudio measured closed-loop ROV attitude experiment final-03 at experiment time 25 seconds; closer canyon camera and fixed display-only hover reference. Source and method: assets/media/attitude/study.json and README.md. Not AI-generated."
+    }
+  ]
+}
