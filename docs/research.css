@@ -67,3 +67,12 @@
 @media(max-width:600px){.research-section{padding-block:58px}.research-wrap{width:calc(100% - 28px)}.research-heading-row{margin-bottom:30px;gap:15px}.research-heading-row h2{font-size:30px}.autoresearch-loop{display:flex;flex-direction:column;align-items:stretch;gap:36px;padding-left:22px}.research-goal{display:block;padding:21px}.research-goal p{margin-top:12px;max-width:28ch}.research-agent-group,.research-platform-group{padding:22px;grid-template-rows:42px 165px 55px 110px}.research-agent-roster span{font-size:14px}.research-agent{padding:20px 15px}.research-agent-roster{gap:19px 12px}.research-node h4{font-size:22px}.research-setup>div{font-size:16px;grid-template-columns:65px 1fr}.research-analysis p,.research-simulation p{font-size:16px}.research-platform-group{grid-template-rows:42px 175px 55px 110px}.research-goal>span{font-size:15px}.docking-heading{margin-top:48px}.docking-heading h3{font-size:26px}.docking-trials{gap:8px}.docking-trials button{display:flex;flex-direction:column;gap:8px;padding:14px 10px;min-height:142px}.docking-trials strong{font-size:16px}.docking-trials button>span{font-size:15px;line-height:1.2}.docking-trials em{font-size:12px}.docking-evidence{display:block}.docking-evidence dl{margin:15px 0 22px}.docking-evidence dd{font-size:22px}.docking-rate{left:10px;top:10px;font-size:11px}.docking-film{border-radius:10px}}
 @media(max-width:360px){.research-agent-roster{grid-template-columns:1fr;gap:13px}.research-agent-group{grid-template-rows:42px 230px 55px 110px}.research-agent-roster span{font-size:15px}.research-agent>b{margin-top:5px}.research-agent-group,.research-platform-group{padding:20px 17px}.research-setup{padding:18px 15px}.research-setup>div{font-size:14px}.research-goal p{font-size:20px}.docking-trials strong{font-size:14px}.docking-trials button{padding:13px 8px}}
 @media(prefers-reduced-motion:reduce){.docking-trials button{transition:none}}
+
+/* The IMU case inherits the existing recorded-experiment composition. */
+.attitude-trials em[data-verdict=passed]{color:#226d66}
+#attitude-fallback{padding:16px;color:#fff}
+#attitude-chart{width:100%;display:block;overflow:visible;margin-top:5px}
+#attitude-chart text{font:12px Manrope,sans-serif;fill:#53718a}
+#attitude-curve{stroke:#4b7dc6;fill:none;stroke-width:2.3;stroke-linejoin:round;stroke-linecap:round}
+#attitude-playhead{stroke:#8cacd5;stroke-width:1.2;opacity:.8}
+@media(max-width:850px){#attitude-chart{grid-column:1/3;max-height:155px}}
