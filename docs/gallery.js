@@ -191,7 +191,7 @@
   });
 
   translate();
-  fetch('assets/media/capabilities/manifest.json?v=20261027-scene-reel').then(response => {
+  fetch('assets/media/capabilities/manifest.json?v=20261102-level').then(response => {
     if (!response.ok) throw Error('manifest unavailable');
     return response.json();
   }).then(manifest => {

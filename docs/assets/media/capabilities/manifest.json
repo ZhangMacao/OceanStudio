@@ -26,7 +26,7 @@
       "height": 1080,
       "sha256": "3aae842a90b09c218f59460d3c84d3530df9cb4591cc476754b1cc299569c81b",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -50,12 +50,12 @@
       "poster": "assets/images/capabilities/fleet.jpg",
       "preview_video": "assets/media/capabilities/fleet.webm",
       "preview_sha256": "3c36413ebd640823192a36ea9e04f1b7f66b82544557184fa5cd66584cac3bec",
-      "duration": 6.0,
+      "duration": 6,
       "width": 1920,
       "height": 1080,
       "sha256": "1d8d8837c12eca2019369d08b152ccc39c52fc10893f46328ab8c8f322de3846",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -84,7 +84,7 @@
       "height": 1080,
       "sha256": "195be8eff134015b24669ff23dbdba65008aeaa37eb86232e4b3b722898cb557",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -113,7 +113,7 @@
       "height": 1080,
       "sha256": "45b4a57afc4e68a91c00f5d3e430d877d5835ea3e2b197db370e37fbd859d152",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -142,7 +142,7 @@
       "height": 1080,
       "sha256": "ffc720f09fb5bbf372b8128acd13a580b3ada25ddfe9bdfb5324b948abda4a2f",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -174,7 +174,7 @@
       "source_commits": [
         "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
       ],
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film"
     },
     {
@@ -206,7 +206,7 @@
         "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b",
         "b9786ddfd1a124ffa974d172b0d47f0d8df369b6"
       ],
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film"
     },
     {
@@ -234,7 +234,7 @@
       "height": 1080,
       "sha256": "b76b47b586c30f675ff0a332d6499d712acb80a9f7d255505653c730b92a7475",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -263,7 +263,7 @@
       "height": 1080,
       "sha256": "31c3c83296bf5ab6991c041f7e553deda0fbeb18d8cc00d5948e7db601c91a00",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -295,7 +295,7 @@
       "source_commits": [
         "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
       ],
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film"
     },
     {
@@ -326,7 +326,7 @@
       "source_commits": [
         "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
       ],
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film"
     },
     {
@@ -354,7 +354,7 @@
       "height": 1080,
       "sha256": "5d4499186de3c85cefd3ad858e3f6db5292ba165ed063fb6963ac67a06ffed3d",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -383,7 +383,7 @@
       "height": 1080,
       "sha256": "fdc0d92d8a80eda00e5bffc667dba5e25aefc849e7cf76624d5f5228cb8961c2",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -412,7 +412,7 @@
       "height": 1080,
       "sha256": "1b5877834c01206ee851c0b3924e54142e9edfd7d9f1322fb851232f392b2246",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 3.0,
+      "playback_rate": 3,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -444,7 +444,7 @@
       "source_commits": [
         "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
       ],
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film"
     },
     {
@@ -472,7 +472,7 @@
       "height": 1080,
       "sha256": "bf851759fda6a5ef0b4e6d0f8ff7b7da3e4ca359e76de127a84b34515bdde0ae",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -496,12 +496,12 @@
       "poster": "assets/images/capabilities/kinematics-plugin.jpg",
       "preview_video": "assets/media/capabilities/kinematics-plugin.webm",
       "preview_sha256": "92342d5e75903b4ceb19a47eade5de3fa31b5e1cc6aa2d3c068388cefafe469e",
-      "duration": 8.0,
+      "duration": 8,
       "width": 1920,
       "height": 1080,
       "sha256": "edd2ae444d407b5c54c72caf62c611e9f422dcf808861bea315f59a03b3ee5d5",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -530,7 +530,7 @@
       "height": 1080,
       "sha256": "bb022226113e8a436b1d6cebf9cc94537c4fc6fc20db2f5552289c5f6e03b867",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -559,7 +559,7 @@
       "height": 1080,
       "sha256": "634b0dad6f781ed9b8c4e5a7d6a3bdf0645df14e615b3f299a9a549cf08a5b45",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -588,7 +588,7 @@
       "height": 1080,
       "sha256": "c1c5444807802dfcb648156102613b71403724173ac0ff530c743ad0debc7475",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -617,7 +617,7 @@
       "height": 1080,
       "sha256": "580b60efa09fcb2938aade955de03d4c2d3a98025436f51377369a03f67a34eb",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -641,12 +641,12 @@
       "poster": "assets/images/capabilities/task-plugin.jpg",
       "preview_video": "assets/media/capabilities/task-plugin.webm",
       "preview_sha256": "2b0c349e23a3e75e95906159f35341387bcab19286da7fb19cc6d21b589d652a",
-      "duration": 8.0,
+      "duration": 8,
       "width": 1920,
       "height": 1080,
       "sha256": "4416b08e53213e5d85c96f527f23981b2d88151236086e2720a5ca26d0a01c5f",
       "source_commit": "b9786ddfd1a124ffa974d172b0d47f0d8df369b6",
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "capture": "new Playwright browser interaction recording; no footage from the overview film",
       "verified_compatible_with": "5a3e1fb1c3313db91fc25954a7ecb2ebc4a03a9b"
     },
@@ -669,14 +669,14 @@
       "video": "assets/media/scenes/reef-survey.mp4",
       "preview_video": "assets/media/scenes/reef-survey.webm",
       "poster": "assets/images/scenes/reef-survey.jpg",
-      "duration": 10.0,
+      "duration": 10,
       "width": 2560,
       "height": 1440,
       "preview_width": 1920,
       "preview_height": 1080,
       "fps": 30,
       "frames": 300,
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "sha256": "05cf07f9012936558e826f95db5e6d139f90482799e67e82aaee94ed099092e4",
       "preview_sha256": "43072c1e2a48c5a4589b4d7e8f4e329a6853bfee7bc53614cc34e461b80d3e4b",
       "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
@@ -686,7 +686,7 @@
       "capture_date": "2026-10-27",
       "raw_master_sha256": "4ca742a422c4520be39b426b4f5e0ee32f7d1d60909747c50b0aa9c9cac7cd88",
       "raw_rgb_stream_sha256": "c276100cc8bfcb6d8abf465efacb3a7648a32eef0fd2ad7be955c88529b247a5",
-      "max_native_pose_error_m": 8.184706943591916e-06,
+      "max_native_pose_error_m": 0.000008184706943591916,
       "native_engine_stopped": true
     },
     {
@@ -708,14 +708,14 @@
       "video": "assets/media/scenes/canyon-descent.mp4",
       "preview_video": "assets/media/scenes/canyon-descent.webm",
       "poster": "assets/images/scenes/canyon-descent.jpg",
-      "duration": 10.0,
+      "duration": 10,
       "width": 2560,
       "height": 1440,
       "preview_width": 1920,
       "preview_height": 1080,
       "fps": 30,
       "frames": 300,
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "sha256": "b78179d7377fd6a98d408afc3a22599b242b247edcc035f8e941e759847696bd",
       "preview_sha256": "caf6317d2533259e90149117287e5b4b295daab42e8ba39dc73c6e2937caaeac",
       "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
@@ -725,7 +725,7 @@
       "capture_date": "2026-10-27",
       "raw_master_sha256": "79c2afb70ace28825ccdab13140119f01edcdece5d8bcb6400b0ae7940fcad71",
       "raw_rgb_stream_sha256": "eccd8b84e6f83ad1c8aea5e8cb60ac9987de2b7e33be8a0715d0645dc5975320",
-      "max_native_pose_error_m": 1.1104415635088027e-05,
+      "max_native_pose_error_m": 0.000011104415635088027,
       "native_engine_stopped": true
     },
     {
@@ -747,14 +747,14 @@
       "video": "assets/media/scenes/wreck-inspection.mp4",
       "preview_video": "assets/media/scenes/wreck-inspection.webm",
       "poster": "assets/images/scenes/wreck-inspection.jpg",
-      "duration": 10.0,
+      "duration": 10,
       "width": 2560,
       "height": 1440,
       "preview_width": 1920,
       "preview_height": 1080,
       "fps": 30,
       "frames": 300,
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "sha256": "6ffe628e617219ec5832cd8f94a9f3f6c10dfb2c911d5541de1559bbfab15dc7",
       "preview_sha256": "89a2baa17227f4029fbda9a6641045dc5fc45a21100f702519802c9f9e862f5f",
       "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
@@ -764,7 +764,7 @@
       "capture_date": "2026-10-27",
       "raw_master_sha256": "061e398121711b3da1732a41819c15e045c8e9b23381a1b9259d726be831bdfb",
       "raw_rgb_stream_sha256": "0cde02f86cb05ed3d2238ccb3976a653e43048deacdc007c39ddf4973520fd31",
-      "max_native_pose_error_m": 2.1054830979362124e-06,
+      "max_native_pose_error_m": 0.0000021054830979362124,
       "native_engine_stopped": true
     },
     {
@@ -786,14 +786,14 @@
       "video": "assets/media/scenes/fleet-traverse.mp4",
       "preview_video": "assets/media/scenes/fleet-traverse.webm",
       "poster": "assets/images/scenes/fleet-traverse.jpg",
-      "duration": 10.0,
+      "duration": 10,
       "width": 2560,
       "height": 1440,
       "preview_width": 1920,
       "preview_height": 1080,
       "fps": 30,
       "frames": 300,
-      "playback_rate": 1.0,
+      "playback_rate": 1,
       "sha256": "9db938a54b451f46b9e206c3fc58754dc91eadee5a923d9a9caf58df76c1ddb8",
       "preview_sha256": "dfdf24c679e9adccbc18c69c911d209b415ac28de684cd62d53bb1ac34270713",
       "capture": "Native UE 5.3.2 / HoloOcean 2.4 RGB frames; independent camera carrier; prerecorded choreographed motion",
@@ -803,7 +803,7 @@
       "capture_date": "2026-10-27",
       "raw_master_sha256": "0db71c0139fcc6035961be8e4f22482a8c011d3d6283777f6f9dc57288711e28",
       "raw_rgb_stream_sha256": "5513acc76e5f855b791f14bc04649f57dd40e90df7c045f41c2a520bb07e82f7",
-      "max_native_pose_error_m": 1.1206740539710458e-05,
+      "max_native_pose_error_m": 0.000011206740539710458,
       "native_engine_stopped": true
     },
     {
@@ -822,22 +822,22 @@
         "en": "UE scene demonstration with prescribed vehicle poses and camera choreography. This is not a closed-loop controller, autonomous planning or collision-avoidance result.",
         "zh": "UE 场景展示，使用预设载体位姿和相机运镜；不作为闭环控制、自主规划或自主避障的验收结果。"
       },
-      "video": "assets/media/scenes/scene-reel.mp4",
-      "preview_video": "assets/media/scenes/scene-reel.webm",
+      "video": "assets/media/scenes/scene-reel.mp4?v=20261102-level",
+      "preview_video": "assets/media/scenes/scene-reel.webm?v=20261102-level",
       "poster": "assets/images/scenes/scene-reel.jpg",
-      "duration": 40.0,
+      "duration": 40,
       "width": 2560,
       "height": 1440,
       "preview_width": 1920,
       "preview_height": 1080,
       "fps": 30,
       "frames": 1200,
-      "playback_rate": 1.0,
-      "sha256": "80ba466b3d83c867261053aab3a3d2c64f633b467ae2ce4b31e43aef1167b308",
-      "preview_sha256": "98ec9a12bc53a681b21c386c39494ead5d4f601ecf3ea896bc55b5e6a0697a6a",
-      "capture": "Stream-copy concatenation of four native UE recordings; original resolution/frame rate retained",
+      "playback_rate": 1,
+      "sha256": "a91493eb4f7fc3ed1fb5cbb14e4ad4c73db70e90f63f0c5bea44f9598dd945ba",
+      "preview_sha256": "4a65d11d1335904170b1de48fd19544ee8c5b7fdb2be76802e3dc332f6a470fa",
+      "capture": "Four native UE scene recordings with level AUV pitch and gentle roll, encoded into a continuous reel",
       "scene_package": "TrenchReefScenes 1.0.0",
-      "capture_date": "2026-10-27",
+      "capture_date": "2026-11-02",
       "native_engine_stopped": true,
       "sources": [
         "reef-survey",
