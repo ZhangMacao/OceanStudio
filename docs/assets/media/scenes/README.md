@@ -10,7 +10,7 @@ The downloadable H.264 MP4s retain 2560 × 1440 and all 300 frames. The VP9 WebM
 
 ## Continuous website reel
 
-The website uses one window titled “兼容多种任务实验” / “Support for diverse experiments”. `scene-reel.mp4` and `scene-reel.webm` join the four delivery streams in their original order, retaining all 1,200 frames on an approximately forty-second loop. They are concatenated without re-encoding; resolution and frame rate are preserved. Both the page preview and enlarged player show the complete reel, without individual scene-name captions. The original files and their provenance remain available in the manifest.
+The website reel was re-recorded on 2026-11-02 using the same four worlds and camera paths. The AUV uses level pitch independent of seabed slope and gentle 1.5° roll. Each UE capture contains 300 native frames; all engines exited normally and native position readbacks were checked. The resulting 1,200-frame reel is encoded as 2560 × 1440 H.264 and 1920 × 1080 VP9, both at 30 fps for 40 seconds. The individual archival films and their manifest entries retain the original recordings.
 
 ## Asset credits
 
