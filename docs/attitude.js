@@ -10,11 +10,11 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const tabs = [...section.querySelectorAll('[data-attitude-trial]')];
   const copy = {
-    en: {heading:'Steady ROV attitude from IMU feedback.',tabs:'ROV attitude-control iterations',trial0:'PID baseline',trial1:'Sliding-mode control',trial2:'Disturbance observer',rate:'Native UE · 2× playback',open:'Open video',revision:'Agent revision',rms:'Attitude RMS',p95:'Attitude P95',angularRate:'Angular-rate RMS',chart:'Roll & pitch error',chartLabel:'Combined roll and pitch error over experiment time',passed:'Stable',notMet:'Needs improvement',video:'ROV IMU attitude-control experiment',unavailable:'Experiment media unavailable'},
-    zh: {heading:'基于 IMU 反馈的 ROV 抗扰稳姿。',tabs:'ROV 姿态控制迭代',trial0:'PID 基线',trial1:'滑模抗扰',trial2:'扰动观测补偿',rate:'原生 UE · 2 倍速',open:'直接播放视频',revision:'Agent 修改方案',rms:'姿态均方根误差',p95:'姿态误差 P95',angularRate:'角速度均方根',chart:'横滚与俯仰误差',chartLabel:'横滚与俯仰综合误差随实验时间变化',passed:'姿态稳定',notMet:'仍需改进',video:'ROV IMU 姿态抗扰实验',unavailable:'实验媒体暂不可用'},
+    en: {heading:'Steady ROV attitude from IMU feedback.',method:'IMU attitude · truth-aided position & velocity · UE pose replay ↗',tabs:'ROV attitude-control iterations',trial0:'PID baseline',trial1:'Sliding-mode control',trial2:'Disturbance observer',rate:'Native UE · 2× playback',open:'Open video',revision:'Agent revision',rms:'Attitude RMS',p95:'Attitude P95',angularRate:'Angular-rate RMS',chart:'Combined roll / pitch error',chartLabel:'Combined roll and pitch error over experiment time',passed:'Stable',notMet:'Needs improvement',video:'ROV IMU attitude-control experiment',unavailable:'Experiment media unavailable'},
+    zh: {heading:'基于 IMU 反馈的 ROV 抗扰稳姿。',method:'IMU 姿态反馈 · 真值辅助位置与速度 · UE 轨迹回放 ↗',tabs:'ROV 姿态控制迭代',trial0:'PID 基线',trial1:'滑模抗扰',trial2:'扰动观测补偿',rate:'原生 UE · 2 倍速',open:'直接播放视频',revision:'Agent 修改方案',rms:'姿态均方根误差',p95:'姿态误差 P95',angularRate:'角速度均方根',chart:'横滚与俯仰综合误差',chartLabel:'横滚与俯仰综合误差随实验时间变化',passed:'姿态稳定',notMet:'仍需改进',video:'ROV IMU 姿态抗扰实验',unavailable:'实验媒体暂不可用'},
   };
   let language = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
-  let study, selected = 0, visible = false, loaded = false, changing = false;
+  let study, selected = 0, visible = false, loaded = false, changing = false, unavailable = false;
   let ignorePauseUntil = 0;
   const stopped = () => reduced.matches && !loaded || motion.getAttribute('aria-pressed') === 'true';
   const eligible = () => !stopped() && !document.hidden && !dialog?.open && (main?.paused ?? true) && (dock?.paused ?? true);
@@ -39,7 +39,8 @@
       const e = tab.querySelector('em'), outcome = study.trials[i].verdict;
       e.textContent = outcome === 'passed' ? c.passed : c.notMet; e.dataset.verdict = outcome;
     });
-    const top = Math.max(3,...study.trials.flatMap(x => x.tilt_curve.map(p => p[1]))) * 1.1;
+    const top = Math.ceil(Math.max(3,...study.trials.flatMap(x => x.tilt_curve.map(p => p[1]))) * 1.1);
+    document.getElementById('attitude-scale-max').textContent = top + '°';
     document.getElementById('attitude-curve').setAttribute('d',t.tilt_curve.map(([time,error],i) => `${i?'L':'M'}${(28+362*time/study.duration_s).toFixed(2)} ${(122-110*error/top).toFixed(2)}`).join(''));
     document.querySelector('#attitude-chart text:last-child').textContent = study.duration_s + ' s';
     playhead();
@@ -96,6 +97,6 @@
   document.addEventListener('oceanstudio:study-focus',event=>{if(event.detail.id==='docking')pause();});
   reduced.addEventListener('change',()=>{if(reduced.matches)pause();else sync();});
   document.addEventListener('oceanstudio:language',event=>{language=event.detail.language;label();});
-  fetch('assets/media/attitude/study.json?v=20261102').then(r=>{if(!r.ok)throw Error('unavailable');return r.json();}).then(data=>{study=data;render();}).catch(()=>{document.getElementById('attitude-verdict').textContent=copy[language].unavailable;});
+  fetch('assets/media/attitude/study.json?v=20261102').then(r=>{if(!r.ok)throw Error('unavailable');return r.json();}).then(data=>{study=data;render();}).catch(()=>{unavailable=true;document.getElementById('attitude-verdict').textContent=copy[language].unavailable;});
   label();
 })();

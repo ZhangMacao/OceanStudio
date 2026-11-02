@@ -76,3 +76,6 @@
 #attitude-curve{stroke:#4b7dc6;fill:none;stroke-width:2.3;stroke-linejoin:round;stroke-linecap:round}
 #attitude-playhead{stroke:#8cacd5;stroke-width:1.2;opacity:.8}
 @media(max-width:850px){#attitude-chart{grid-column:1/3;max-height:155px}}
+
+.attitude-method{font-size:14px;line-height:1.5;color:#315d79;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:850px){.attitude-method{display:inline-block;margin-top:10px}}

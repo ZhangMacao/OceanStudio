@@ -78,6 +78,27 @@ finished recordings, posters, a curated summary of metrics and hashes, and the
 method notice are published. Source algorithms, UE projects, cooked assets,
 per-frame telemetry, capture tools and private profiles remain private.
 
+## ROV IMU attitude-control study
+
+Before the docking case, a native IMU attitude-control study compares PID,
+sliding correction and disturbance-observer compensation. Their matched
+30-second records have attitude RMS 8.7235°, 2.2067° and 0.3257°; only the
+observer meets every frozen criterion. Identical truth-aided translation support
+isolates the attitude comparison, without claiming IMU-only localization.
+
+The finished videos re-render the measured poses in native UE from a closer
+canyon-facing camera. Fixed target, dashed guide and level-ring geometry are
+identical display-only references. Native pose readbacks are checked against the
+original force-integrated records. Three 1440p clips play at 2×, with independent
+metrics and a shared degree scale synchronized to experiment time. Methods and
+provenance are in [the attitude study notice](assets/media/attitude/README.md).
+
+The new player preserves the existing tab/video/evidence layout and shared pause
+control, bilingual node-preserving updates, keyboard navigation, reduced motion,
+native controls, offscreen/hidden-tab and main-film/modal suspension, plus mutual
+exclusion with the docking film. Existing docking, scene, overview and capability
+media retain their bytes. Only finished media, curated summaries and notices ship.
+
 ## Hosting
 
 Default project URL: `https://zhangmacao.github.io/OceanStudio/`.
